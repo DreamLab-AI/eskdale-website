@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <filter id="wc5" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.025" numOctaves="4" seed="25" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="paper5">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" seed="50"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply"/>
+    </filter>
+    <filter id="soft5"><feGaussianBlur stdDeviation="4"/></filter>
+    <filter id="metallic">
+      <feTurbulence type="fractalNoise" baseFrequency="0.1" numOctaves="2" seed="55"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="soft-light"/>
+    </filter>
+    <radialGradient id="silver1" cx="0.35" cy="0.3" r="0.6">
+      <stop offset="0%" stop-color="#e8e8ec"/>
+      <stop offset="30%" stop-color="#c8ccd0"/>
+      <stop offset="70%" stop-color="#a0a8b0"/>
+      <stop offset="100%" stop-color="#7a8490"/>
+    </radialGradient>
+    <radialGradient id="silver2" cx="0.4" cy="0.35" r="0.5">
+      <stop offset="0%" stop-color="#d8dce0"/>
+      <stop offset="100%" stop-color="#8a9298"/>
+    </radialGradient>
+    <linearGradient id="chain" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#a0a8b0"/>
+      <stop offset="50%" stop-color="#d8dce0"/>
+      <stop offset="100%" stop-color="#a0a8b0"/>
+    </linearGradient>
+    <linearGradient id="bg5" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#526A7A" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#A8B2A3" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+  <!-- Background - cool grey fabric -->
+  <rect width="800" height="600" fill="#e0e2e0"/>
+  <rect width="800" height="600" fill="url(#bg5)"/>
+  <!-- Fabric texture -->
+  <path d="M0,100 Q200,95 400,100 Q600,105 800,100" stroke="#A8B2A3" stroke-width="0.5" fill="none" opacity="0.3"/>
+  <path d="M0,200 Q200,195 400,200 Q600,205 800,200" stroke="#A8B2A3" stroke-width="0.5" fill="none" opacity="0.3"/>
+  <path d="M0,300 Q200,295 400,300 Q600,305 800,300" stroke="#A8B2A3" stroke-width="0.5" fill="none" opacity="0.3"/>
+  <path d="M0,400 Q200,395 400,400 Q600,405 800,400" stroke="#A8B2A3" stroke-width="0.5" fill="none" opacity="0.3"/>
+  <path d="M0,500 Q200,495 400,500 Q600,505 800,500" stroke="#A8B2A3" stroke-width="0.5" fill="none" opacity="0.3"/>
+  <!-- Shadow -->
+  <ellipse cx="420" cy="360" rx="120" ry="60" fill="#526A7A" opacity="0.15" filter="url(#soft5)"/>
+  <!-- Chain -->
+  <path d="M250,80 Q300,90 350,120 Q380,150 395,200" stroke="url(#chain)" stroke-width="2.5" fill="none" opacity="0.7" filter="url(#wc5)"/>
+  <path d="M550,85 Q500,95 450,125 Q420,155 405,200" stroke="url(#chain)" stroke-width="2.5" fill="none" opacity="0.7" filter="url(#wc5)"/>
+  <!-- Pendant - outer ring -->
+  <circle cx="400" cy="300" r="90" fill="none" stroke="url(#silver1)" stroke-width="12" filter="url(#metallic)" opacity="0.9"/>
+  <!-- Pendant - inner design (fell-inspired) -->
+  <path d="M340,320 Q360,260 400,250 Q440,260 460,320" fill="url(#silver2)" opacity="0.6" filter="url(#wc5)"/>
+  <!-- Mountain peaks in pendant -->
+  <path d="M350,315 L375,275 L400,295 L425,265 L450,310" stroke="#a0a8b0" stroke-width="2" fill="none" opacity="0.5"/>
+  <!-- Inner circle detail -->
+  <circle cx="400" cy="300" r="65" fill="none" stroke="#c8ccd0" stroke-width="1.5" opacity="0.4"/>
+  <!-- Highlight -->
+  <path d="M345,250 Q370,230 400,225" stroke="white" stroke-width="3" fill="none" opacity="0.3" filter="url(#soft5)"/>
+  <!-- Small stone setting -->
+  <circle cx="400" cy="250" r="8" fill="#6B8E9E" opacity="0.6" filter="url(#wc5)"/>
+  <circle cx="400" cy="250" r="4" fill="#A8B2A3" opacity="0.4"/>
+  <!-- Draped chain on surface -->
+  <path d="M200,80 Q180,85 160,90 Q130,100 120,115" stroke="url(#chain)" stroke-width="2" fill="none" opacity="0.5" filter="url(#wc5)"/>
+  <path d="M580,85 Q610,90 640,100 Q670,115 680,130" stroke="url(#chain)" stroke-width="2" fill="none" opacity="0.5" filter="url(#wc5)"/>
+  <!-- Paper texture -->
+  <rect width="800" height="600" filter="url(#paper5)" opacity="0.06"/>
+  <!-- Label -->
+  <text x="400" y="560" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#526A7A" opacity="0.7" font-style="italic">Silver Pendant</text>
+</svg>

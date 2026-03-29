@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <filter id="wc6" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="5" seed="31" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="paper6">
+      <feTurbulence type="fractalNoise" baseFrequency="0.55" numOctaves="3" seed="60"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply"/>
+    </filter>
+    <filter id="soft6"><feGaussianBlur stdDeviation="4"/></filter>
+    <filter id="grain6">
+      <feTurbulence type="fractalNoise" baseFrequency="0.15 0.01" numOctaves="3" seed="66"/>
+      <feColorMatrix type="saturate" values="0.2"/>
+      <feBlend in="SourceGraphic" mode="overlay"/>
+    </filter>
+    <radialGradient id="oak1" cx="0.4" cy="0.35" r="0.6">
+      <stop offset="0%" stop-color="#B4A189"/>
+      <stop offset="40%" stop-color="#9B856B"/>
+      <stop offset="80%" stop-color="#7A6852"/>
+      <stop offset="100%" stop-color="#5c4d3a"/>
+    </radialGradient>
+    <linearGradient id="oakSide" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7A6852"/>
+      <stop offset="30%" stop-color="#9B856B"/>
+      <stop offset="50%" stop-color="#B4A189"/>
+      <stop offset="70%" stop-color="#9B856B"/>
+      <stop offset="100%" stop-color="#7A6852"/>
+    </linearGradient>
+    <linearGradient id="bg6" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e5e0d8"/>
+      <stop offset="100%" stop-color="#d8d1c5"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bg6)"/>
+  <!-- Warm light -->
+  <ellipse cx="350" cy="200" rx="300" ry="250" fill="#B4A189" opacity="0.08" filter="url(#soft6)"/>
+  <!-- Surface -->
+  <path d="M0,440 Q200,425 400,435 Q600,425 800,440 L800,600 L0,600Z" fill="#9B856B" opacity="0.2" filter="url(#wc6)"/>
+  <!-- Shadow -->
+  <ellipse cx="400" cy="460" rx="130" ry="30" fill="#7A6852" opacity="0.25" filter="url(#soft6)"/>
+  <!-- Vessel body - turned form with curves -->
+  <path d="M310,200
+           Q305,220 300,260
+           Q295,310 310,360
+           Q330,420 400,430
+           Q470,420 490,360
+           Q505,310 500,260
+           Q495,220 490,200Z"
+        fill="url(#oakSide)" filter="url(#grain6)"/>
+  <!-- Wood grain lines -->
+  <path d="M320,240 Q360,235 400,237 Q440,235 480,240" stroke="#7A6852" stroke-width="0.8" fill="none" opacity="0.3"/>
+  <path d="M315,280 Q360,273 400,275 Q440,273 485,280" stroke="#7A6852" stroke-width="0.8" fill="none" opacity="0.35"/>
+  <path d="M310,320 Q360,312 400,314 Q440,312 490,320" stroke="#7A6852" stroke-width="0.8" fill="none" opacity="0.3"/>
+  <path d="M320,360 Q360,350 400,352 Q440,350 480,360" stroke="#7A6852" stroke-width="0.8" fill="none" opacity="0.35"/>
+  <path d="M340,395 Q370,387 400,389 Q430,387 460,395" stroke="#7A6852" stroke-width="0.8" fill="none" opacity="0.3"/>
+  <!-- Vessel opening - rim -->
+  <ellipse cx="400" cy="200" rx="92" ry="30" fill="#9B856B" filter="url(#wc6)"/>
+  <!-- Interior -->
+  <ellipse cx="400" cy="203" rx="80" ry="24" fill="#7A6852" filter="url(#grain6)"/>
+  <!-- Interior depth -->
+  <ellipse cx="400" cy="208" rx="65" ry="18" fill="#5c4d3a" opacity="0.6"/>
+  <!-- Rim highlight -->
+  <path d="M320,195 Q360,182 400,180 Q440,182 480,195" stroke="#d5cec3" stroke-width="1.5" fill="none" opacity="0.4" filter="url(#wc6)"/>
+  <!-- Light reflection on body -->
+  <path d="M350,250 Q365,310 370,380" stroke="#d5cec3" stroke-width="8" fill="none" opacity="0.1" filter="url(#soft6)"/>
+  <!-- Natural edge detail at rim -->
+  <path d="M308,200 Q310,195 315,198" stroke="#B4A189" stroke-width="2" fill="none" opacity="0.4"/>
+  <path d="M488,198 Q492,194 495,200" stroke="#B4A189" stroke-width="2" fill="none" opacity="0.4"/>
+  <!-- Base detail -->
+  <ellipse cx="400" cy="435" rx="60" ry="10" fill="#7A6852" opacity="0.4" filter="url(#wc6)"/>
+  <!-- Paper texture -->
+  <rect width="800" height="600" filter="url(#paper6)" opacity="0.06"/>
+  <!-- Label -->
+  <text x="400" y="540" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#7A6852" opacity="0.7" font-style="italic">Turned Oak Vessel</text>
+</svg>

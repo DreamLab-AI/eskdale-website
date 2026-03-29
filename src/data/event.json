@@ -1,0 +1,39 @@
+{
+  "name": "The Eskdale Art Show",
+  "edition": "31st Annual",
+  "tagline": "A Great Day Out For All The Family",
+  "dates": {
+    "start": "2026-05-23",
+    "end": "2026-05-25",
+    "display": "Saturday 23rd – Monday 25th May 2026"
+  },
+  "times": "10:00 – 16:30 daily",
+  "admission": "Free Admission & Parking",
+  "description": "Discover paintings, photographs, prints, jewellery, woodwork, pottery, scarves, bags, and handcrafted cards from talented local and regional artists. Enjoy delicious home-made refreshments in the heart of the Lake District's hidden gem.",
+  "venue": {
+    "name": "St Bega's C of E Primary School",
+    "address": "Eskdale Green, Holmrook, CA19 1TW, Cumbria",
+    "transport": "Near Irton Road Railway Station on the Ravenglass & Eskdale Railway (La'al Ratty)",
+    "mapEmbed": "https://www.openstreetmap.org/export/embed.html?bbox=-3.285,54.393,-3.270,54.400&layer=mapnik&marker=54.3965,-3.2775",
+    "mapsLink": "https://www.openstreetmap.org/?mlat=54.3965&mlon=-3.2775#map=16/54.3965/-3.2775",
+    "coordinates": { "lat": 54.3965, "lng": -3.2775 }
+  },
+  "categories": [
+    { "name": "Paintings", "icon": "palette", "description": "Oils, acrylics, and watercolours capturing the Lake District landscape" },
+    { "name": "Photography", "icon": "camera", "description": "Stunning shots of Eskdale valley and beyond" },
+    { "name": "Pottery", "icon": "pottery", "description": "Handcrafted ceramics and stoneware" },
+    { "name": "Jewellery", "icon": "gem", "description": "Unique handmade pieces from local artisans" },
+    { "name": "Woodwork", "icon": "tree", "description": "Carved and turned pieces from native timber" },
+    { "name": "Prints", "icon": "print", "description": "Limited edition prints and reproductions" },
+    { "name": "Textiles", "icon": "textile", "description": "Scarves, bags, and woven creations" },
+    { "name": "Cards", "icon": "card", "description": "Handcrafted greeting cards and stationery" }
+  ],
+  "refreshments": "Delicious home-made refreshments including cakes, scones, and hot drinks — all in aid of St Bega's School.",
+  "contact": {
+    "phone": "019467 23259",
+    "email": "eskdaleartshow@st-begas.cumbria.sch.uk",
+    "facebook": "https://www.facebook.com/EskdaleArtshow",
+    "twitter": "https://twitter.com/eskdaleart"
+  },
+  "exhibitorNote": "Interested in exhibiting? Contact us by email or phone for details."
+}

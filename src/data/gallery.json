@@ -1,0 +1,58 @@
+{
+  "items": [
+    {
+      "id": "001",
+      "image": "assets/images/gallery/eskdale-valley-morning.svg",
+      "title": "Eskdale Valley Morning",
+      "artist": "Exhibition Preview",
+      "medium": "Watercolour",
+      "category": "Paintings",
+      "description": "A dawn view across the valley towards Scafell"
+    },
+    {
+      "id": "002",
+      "image": "assets/images/gallery/herdwick-sheep.svg",
+      "title": "Herdwick on the Fell",
+      "artist": "Exhibition Preview",
+      "medium": "Oil on canvas",
+      "category": "Paintings",
+      "description": "Native Herdwick sheep grazing the open fell"
+    },
+    {
+      "id": "003",
+      "image": "assets/images/gallery/river-esk-stones.svg",
+      "title": "River Esk Stones",
+      "artist": "Exhibition Preview",
+      "medium": "Photograph",
+      "category": "Photography",
+      "description": "Water-smoothed stones in the River Esk"
+    },
+    {
+      "id": "004",
+      "image": "assets/images/gallery/ceramic-bowl.svg",
+      "title": "Lakeland Ceramic Bowl",
+      "artist": "Exhibition Preview",
+      "medium": "Stoneware",
+      "category": "Pottery",
+      "description": "Glazed bowl inspired by fell colours"
+    },
+    {
+      "id": "005",
+      "image": "assets/images/gallery/silver-pendant.svg",
+      "title": "Mountain Silver Pendant",
+      "artist": "Exhibition Preview",
+      "medium": "Sterling silver",
+      "category": "Jewellery",
+      "description": "Handcrafted silver pendant with fell silhouette"
+    },
+    {
+      "id": "006",
+      "image": "assets/images/gallery/turned-oak-vessel.svg",
+      "title": "Turned Oak Vessel",
+      "artist": "Exhibition Preview",
+      "medium": "Native oak",
+      "category": "Woodwork",
+      "description": "Hand-turned vessel from wind-fallen oak"
+    }
+  ]
+}

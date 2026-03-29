@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <filter id="wc2" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="5" seed="7" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="10" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="paper2">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" seed="22"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply"/>
+    </filter>
+    <filter id="soft2"><feGaussianBlur stdDeviation="4"/></filter>
+    <filter id="blur2"><feGaussianBlur stdDeviation="2"/></filter>
+    <linearGradient id="pasture" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8B9882"/>
+      <stop offset="60%" stop-color="#657353"/>
+      <stop offset="100%" stop-color="#7A6852"/>
+    </linearGradient>
+    <radialGradient id="sheepBody" cx="0.4" cy="0.35" r="0.6">
+      <stop offset="0%" stop-color="#e8e4dc"/>
+      <stop offset="100%" stop-color="#c5bfb3"/>
+    </radialGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="800" height="600" fill="#d8ddd3"/>
+  <!-- Sky -->
+  <rect width="800" height="280" fill="#A8B2A3" opacity="0.5" filter="url(#wc2)"/>
+  <ellipse cx="200" cy="100" rx="180" ry="60" fill="#6B8E9E" opacity="0.15" filter="url(#soft2)"/>
+  <ellipse cx="600" cy="80" rx="150" ry="50" fill="#526A7A" opacity="0.1" filter="url(#soft2)"/>
+  <!-- Distant fells -->
+  <path d="M0,260 Q120,200 250,240 Q380,190 500,230 Q620,195 750,225 L800,240 L800,320 L0,320Z" fill="#8B9882" opacity="0.5" filter="url(#wc2)"/>
+  <!-- Stone wall -->
+  <path d="M0,310 L800,300 L800,325 L0,330Z" fill="#9B856B" opacity="0.6" filter="url(#wc2)"/>
+  <!-- Pasture -->
+  <rect y="320" width="800" height="280" fill="url(#pasture)" filter="url(#wc2)"/>
+  <!-- Foreground grass texture -->
+  <path d="M0,480 Q100,460 200,475 Q350,455 500,470 Q650,450 800,465 L800,600 L0,600Z" fill="#657353" opacity="0.4" filter="url(#wc2)"/>
+  <!-- Sheep group - main sheep -->
+  <g filter="url(#blur2)">
+    <!-- Sheep 1 (large, foreground) -->
+    <ellipse cx="320" cy="400" rx="55" ry="35" fill="url(#sheepBody)" filter="url(#wc2)"/>
+    <ellipse cx="280" cy="385" rx="16" ry="18" fill="#7A6852"/>
+    <ellipse cx="320" cy="430" rx="5" ry="12" fill="#7A6852"/>
+    <ellipse cx="340" cy="430" rx="5" ry="12" fill="#7A6852"/>
+    <!-- Sheep 2 -->
+    <ellipse cx="450" cy="380" rx="45" ry="28" fill="#ddd8ce" filter="url(#wc2)"/>
+    <ellipse cx="418" cy="368" rx="13" ry="15" fill="#7A6852"/>
+    <ellipse cx="445" cy="405" rx="4" ry="10" fill="#7A6852"/>
+    <ellipse cx="460" cy="405" rx="4" ry="10" fill="#7A6852"/>
+    <!-- Sheep 3 (small, distant) -->
+    <ellipse cx="560" cy="360" rx="30" ry="18" fill="#d5d0c6" filter="url(#wc2)"/>
+    <ellipse cx="540" cy="352" rx="9" ry="10" fill="#7A6852"/>
+    <!-- Sheep 4 (background) -->
+    <ellipse cx="200" cy="370" rx="25" ry="15" fill="#ccc7bb" filter="url(#wc2)"/>
+    <ellipse cx="183" cy="362" rx="8" ry="9" fill="#7A6852"/>
+    <!-- Lamb -->
+    <ellipse cx="350" cy="420" rx="20" ry="14" fill="#ebe8e2" filter="url(#wc2)"/>
+    <ellipse cx="338" cy="413" rx="7" ry="8" fill="#7A6852"/>
+  </g>
+  <!-- Warm light patches -->
+  <ellipse cx="400" cy="420" rx="300" ry="100" fill="#B4A189" opacity="0.08" filter="url(#soft2)"/>
+  <!-- Paper texture -->
+  <rect width="800" height="600" filter="url(#paper2)" opacity="0.07"/>
+  <!-- Label -->
+  <text x="400" y="570" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#7A6852" opacity="0.7" font-style="italic">Herdwick Sheep</text>
+</svg>

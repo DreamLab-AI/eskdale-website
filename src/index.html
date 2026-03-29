@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Eskdale Art Show — 31st Annual, May 2026</title>
+  <meta name="description" content="31st Annual Eskdale Art Show. Free admission. Paintings, pottery, jewellery, woodwork, photography and more at St Bega's School, Eskdale Green, Lake District. 23–25 May 2026.">
+  <meta name="theme-color" content="#F7F5F0">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="The Eskdale Art Show — 31st Annual">
+  <meta property="og:description" content="Free community art exhibition in the heart of Eskdale valley. Paintings, pottery, jewellery, woodwork and more. 23–25 May 2026.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/og-card.webp">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- Navigation -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#categories">What's On</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#visit">Visit</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <canvas id="brushstroke-canvas" class="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero-content">
+      <span class="hero-edition" id="hero-edition">31st Annual</span>
+      <h1 id="hero-title">The Eskdale Art Show</h1>
+      <p class="hero-dates" id="hero-dates">Saturday 23rd – Monday 25th May 2026</p>
+      <p class="hero-times" id="hero-times">10:00 – 16:30 daily</p>
+      <p class="hero-admission" id="hero-admission">Free Admission & Parking</p>
+      <p class="hero-countdown" id="countdown"></p>
+      <div class="hero-cta-group">
+        <a href="#gallery" class="btn btn--primary">View Gallery</a>
+        <a href="#visit" class="btn btn--outline">How to Find Us</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="wash-divider"></div>
+
+  <main id="main">
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>Welcome</h2>
+          <p id="about-description">Discover paintings, photographs, prints, jewellery, woodwork, pottery, scarves, bags, and handcrafted cards from talented local and regional artists. Enjoy delicious home-made refreshments in the heart of the Lake District's hidden gem.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="section section--alt" id="categories">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>What to See</h2>
+          <p>A wonderful variety of arts and crafts from local and regional makers</p>
+        </div>
+        <div class="categories-grid" id="categories-grid">
+          <!-- Rendered by JS from event.json -->
+        </div>
+      </div>
+    </section>
+
+    <div class="wash-divider"></div>
+
+    <!-- Gallery -->
+    <section class="section" id="gallery">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>Gallery</h2>
+          <p>A preview of works from our talented exhibitors</p>
+        </div>
+        <div class="gallery-grid" id="gallery-grid">
+          <!-- Rendered by JS from gallery.json -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-label="Image viewer">
+      <button class="lightbox-close" aria-label="Close">&times;</button>
+      <img src="" alt="">
+      <p class="lightbox-caption"></p>
+    </div>
+
+    <div class="wash-divider"></div>
+
+    <!-- Visit -->
+    <section class="section section--alt" id="visit">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>Visit Us</h2>
+          <p>We're in the heart of Eskdale valley — a great excuse for a day in the Lakes</p>
+        </div>
+        <div class="info-cards reveal">
+          <div class="info-card">
+            <span class="info-card-icon">&#x1F4C5;</span>
+            <h3>When</h3>
+            <p id="visit-when">Saturday 23rd – Monday 25th May 2026<br>10:00 – 16:30 daily</p>
+          </div>
+          <div class="info-card">
+            <span class="info-card-icon">&#x1F4CD;</span>
+            <h3>Where</h3>
+            <p id="visit-where">St Bega's C of E Primary School<br>Eskdale Green, CA19 1TW</p>
+          </div>
+          <div class="info-card">
+            <span class="info-card-icon">&#x1F3AB;</span>
+            <h3>Entry</h3>
+            <p>Free admission<br>Free parking on site</p>
+          </div>
+          <div class="info-card">
+            <span class="info-card-icon">&#x1F682;</span>
+            <h3>By Rail</h3>
+            <p>Near Irton Road Station on the Ravenglass &amp; Eskdale Railway</p>
+          </div>
+        </div>
+
+        <div class="directions-grid" style="margin-top: 2.5rem;">
+          <div class="directions-text reveal">
+            <address id="venue-address">
+              St Bega's C of E Primary School<br>
+              Eskdale Green, Holmrook, CA19 1TW, Cumbria
+            </address>
+            <p id="venue-transport">Near Irton Road Railway Station on the Ravenglass & Eskdale Railway (La'al Ratty)</p>
+            <a href="https://www.openstreetmap.org/?mlat=54.3965&mlon=-3.2775#map=16/54.3965/-3.2775" id="maps-link" class="btn btn--outline" target="_blank" rel="noopener">Open in Maps</a>
+          </div>
+          <div class="directions-map reveal">
+            <iframe id="map-iframe"
+                    src=""
+                    title="Map showing Eskdale Green location"
+                    loading="lazy"
+                    referrerpolicy="no-referrer"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="wash-divider"></div>
+
+    <!-- Refreshments -->
+    <section class="section" id="refreshments">
+      <div class="container">
+        <div class="refreshments-callout reveal">
+          <span class="callout-icon">&#x2615;</span>
+          <h3>Home-Made Refreshments</h3>
+          <p id="refreshments-text">Delicious home-made refreshments including cakes, scones, and hot drinks — all in aid of St Bega's School.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section section--alt" id="contact">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>Get in Touch</h2>
+        </div>
+        <div class="contact-grid" id="contact-grid">
+          <!-- Rendered by JS from event.json -->
+        </div>
+        <div class="exhibitor-cta reveal">
+          <h3>Interested in Exhibiting?</h3>
+          <p id="exhibitor-note">Contact us by email or phone for details.</p>
+          <a href="mailto:eskdaleartshow@st-begas.cumbria.sch.uk" class="btn btn--primary">Contact Us</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 The Eskdale Art Show &middot; <a href="https://www.eskdale.info">eskdale.info</a></p>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
