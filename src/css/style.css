@@ -224,6 +224,13 @@ body::before {
 }
 
 .hero h1 {
+  margin-bottom: 0.5rem;
+}
+
+.hero-tagline {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 0.9rem + 0.4vw, 1.125rem);
+  color: var(--color-text-secondary);
   margin-bottom: 1rem;
 }
 
