@@ -64,7 +64,7 @@
 
     grid.innerHTML = categories.map(cat => `
       <div class="category-card reveal">
-        <span class="category-icon">${CATEGORY_ICONS[cat.icon] || '\u{1F3A8}'}</span>
+        <span class="category-icon" role="img" aria-hidden="true">${CATEGORY_ICONS[cat.icon] || '\u{1F3A8}'}</span>
         <h3>${esc(cat.name)}</h3>
         <p>${esc(cat.description)}</p>
       </div>
@@ -77,7 +77,7 @@
     if (!grid) return;
 
     grid.innerHTML = items.map(item => `
-      <figure class="gallery-item reveal" data-src="${esc(item.image)}" data-title="${esc(item.title)}" data-artist="${esc(item.artist)}">
+      <figure class="gallery-item reveal" tabindex="0" role="button" data-src="${esc(item.image)}" data-title="${esc(item.title)}" data-artist="${esc(item.artist)}">
         <img src="${esc(item.image)}" alt="${esc(item.title)} by ${esc(item.artist)}" loading="lazy" width="400" height="300">
         <figcaption class="gallery-caption">
           <h4>${esc(item.title)}</h4>
@@ -96,14 +96,47 @@
 
     const lbImg = lightbox.querySelector('img');
     const lbCaption = lightbox.querySelector('.lightbox-caption');
+    const closeBtn = lightbox.querySelector('.lightbox-close');
+    let triggerEl = null;
+    let galleryItems = [];
+
+    function openLightbox(item) {
+      triggerEl = item;
+      galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+      lbImg.src = item.dataset.src;
+      lbImg.alt = `${item.dataset.title} by ${item.dataset.artist}`;
+      lbCaption.textContent = `${item.dataset.title} — ${item.dataset.artist}`;
+      lightbox.classList.add('active');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      closeBtn.focus();
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (triggerEl) triggerEl.focus();
+    }
+
+    function showAdjacentImage(direction) {
+      if (!triggerEl || galleryItems.length === 0) return;
+      const currentIndex = galleryItems.indexOf(triggerEl);
+      const nextIndex = (currentIndex + direction + galleryItems.length) % galleryItems.length;
+      const nextItem = galleryItems[nextIndex];
+      triggerEl = nextItem;
+      lbImg.src = nextItem.dataset.src;
+      lbImg.alt = `${nextItem.dataset.title} by ${nextItem.dataset.artist}`;
+      lbCaption.textContent = `${nextItem.dataset.title} — ${nextItem.dataset.artist}`;
+    }
 
     document.querySelectorAll('.gallery-item').forEach(item => {
-      item.addEventListener('click', () => {
-        lbImg.src = item.dataset.src;
-        lbImg.alt = item.dataset.title;
-        lbCaption.textContent = `${item.dataset.title} — ${item.dataset.artist}`;
-        lightbox.classList.add('active');
-        document.body.style.overflow = 'hidden';
+      item.addEventListener('click', () => openLightbox(item));
+      item.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openLightbox(item);
+        }
       });
     });
 
@@ -113,16 +146,15 @@
       }
     });
 
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-        closeLightbox();
+    lightbox.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') { closeLightbox(); return; }
+      if (e.key === 'ArrowLeft') { showAdjacentImage(-1); return; }
+      if (e.key === 'ArrowRight') { showAdjacentImage(1); return; }
+      if (e.key === 'Tab') {
+        e.preventDefault();
+        closeBtn.focus();
       }
     });
-
-    function closeLightbox() {
-      lightbox.classList.remove('active');
-      document.body.style.overflow = '';
-    }
   }
 
   // --- Render Contact ---
@@ -155,10 +187,26 @@
     const slides = track.querySelectorAll('.carousel-slide');
     if (slides.length === 0) return;
 
-    const prevBtn = track.parentElement.querySelector('.carousel-btn--prev');
-    const nextBtn = track.parentElement.querySelector('.carousel-btn--next');
+    const carousel = track.parentElement;
+    const prevBtn = carousel.querySelector('.carousel-btn--prev');
+    const nextBtn = carousel.querySelector('.carousel-btn--next');
     let current = 0;
     let autoTimer = null;
+    let autoPaused = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Live region for screen readers
+    const statusEl = document.createElement('div');
+    statusEl.className = 'sr-only';
+    statusEl.setAttribute('aria-live', 'polite');
+    statusEl.id = 'carousel-status';
+    carousel.appendChild(statusEl);
+
+    // Pause/play button
+    const pauseBtn = document.createElement('button');
+    pauseBtn.classList.add('carousel-btn', 'carousel-btn--pause');
+    pauseBtn.setAttribute('aria-label', autoPaused ? 'Play carousel' : 'Pause carousel');
+    pauseBtn.textContent = autoPaused ? '\u25B6' : '\u23F8';
+    carousel.appendChild(pauseBtn);
 
     // Build dots
     slides.forEach((_, i) => {
@@ -176,13 +224,47 @@
       dotsContainer.querySelectorAll('.carousel-dot').forEach((d, i) => {
         d.classList.toggle('active', i === current);
       });
+      statusEl.textContent = `Poster ${current + 1} of ${slides.length}`;
       resetAuto();
     }
 
     function resetAuto() {
       if (autoTimer) clearInterval(autoTimer);
-      autoTimer = setInterval(() => goTo(current + 1), 5000);
+      autoTimer = null;
+      if (!autoPaused) {
+        autoTimer = setInterval(() => goTo(current + 1), 5000);
+      }
     }
+
+    function togglePause() {
+      autoPaused = !autoPaused;
+      if (autoPaused) {
+        if (autoTimer) clearInterval(autoTimer);
+        autoTimer = null;
+        pauseBtn.textContent = '\u25B6';
+        pauseBtn.setAttribute('aria-label', 'Play carousel');
+      } else {
+        resetAuto();
+        pauseBtn.textContent = '\u23F8';
+        pauseBtn.setAttribute('aria-label', 'Pause carousel');
+      }
+    }
+
+    pauseBtn.addEventListener('click', togglePause);
+
+    // Pause auto-play on hover and focus
+    carousel.addEventListener('mouseenter', () => {
+      if (!autoPaused && autoTimer) { clearInterval(autoTimer); autoTimer = null; }
+    });
+    carousel.addEventListener('mouseleave', () => {
+      if (!autoPaused) resetAuto();
+    });
+    carousel.addEventListener('focusin', () => {
+      if (!autoPaused && autoTimer) { clearInterval(autoTimer); autoTimer = null; }
+    });
+    carousel.addEventListener('focusout', (e) => {
+      if (!autoPaused && !carousel.contains(e.relatedTarget)) resetAuto();
+    });
 
     prevBtn.addEventListener('click', () => goTo(current - 1));
     nextBtn.addEventListener('click', () => goTo(current + 1));
@@ -196,7 +278,7 @@
     }, { passive: true });
 
     // Keyboard
-    track.parentElement.addEventListener('keydown', (e) => {
+    carousel.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowLeft') goTo(current - 1);
       if (e.key === 'ArrowRight') goTo(current + 1);
     });
@@ -244,21 +326,35 @@
       await wasm.default();
       const system = new wasm.ParticleSystem(canvas, isMobile);
 
+      // Scale canvas context for HiDPI parity with JS fallback
+      const ctx = canvas.getContext('2d');
+      if (ctx) ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
       let lastTime = performance.now();
       let paused = false;
+      let animId = null;
 
       const observer = new IntersectionObserver(([entry]) => {
         paused = !entry.isIntersecting;
-        if (paused) system.pause(); else system.resume();
+        if (paused) {
+          system.pause();
+          if (animId) { cancelAnimationFrame(animId); animId = null; }
+        } else {
+          system.resume();
+          lastTime = performance.now();
+          if (!animId) animId = requestAnimationFrame(frame);
+        }
       }, { threshold: 0 });
       observer.observe(hero);
 
       new ResizeObserver(() => {
         const r = hero.getBoundingClientRect();
-        canvas.width = r.width * dpr;
-        canvas.height = r.height * dpr;
+        const currentDpr = Math.min(window.devicePixelRatio || 1, 2);
+        canvas.width = r.width * currentDpr;
+        canvas.height = r.height * currentDpr;
         canvas.style.width = r.width + 'px';
         canvas.style.height = r.height + 'px';
+        if (ctx) ctx.setTransform(currentDpr, 0, 0, currentDpr, 0, 0);
         system.resize(canvas.width, canvas.height);
       }).observe(hero);
 
@@ -266,9 +362,9 @@
         const dt = Math.min((ts - lastTime) / 1000, 0.05);
         lastTime = ts;
         system.tick(dt);
-        requestAnimationFrame(frame);
+        animId = requestAnimationFrame(frame);
       }
-      requestAnimationFrame(frame);
+      animId = requestAnimationFrame(frame);
       return;
     } catch (_) {
       // WASM not available, try JS fallback
@@ -282,30 +378,30 @@
     }
   }
 
-  // --- Escape HTML ---
+  // --- Escape HTML (string-based, no DOM allocation) ---
+  const ESC_MAP = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
   function esc(str) {
-    const d = document.createElement('div');
-    d.textContent = str || '';
-    return d.innerHTML;
+    return (str || '').replace(/[&<>"']/g, c => ESC_MAP[c]);
   }
 
   // --- Map Embed ---
   function renderMap(venue) {
     const iframe = document.getElementById('map-iframe');
     if (!iframe || !venue.mapEmbed) return;
-    iframe.src = venue.mapEmbed;
+    if (venue.mapEmbed.startsWith('https://')) {
+      iframe.src = venue.mapEmbed;
+    }
   }
 
   // --- Boot ---
   async function boot() {
     try {
-      const event = await loadJSON('data/event.json');
+      const [event, gallery] = await Promise.all([
+        loadJSON('data/event.json'),
+        loadJSON('data/gallery.json')
+      ]);
 
-      // Populate static elements
-      const setHtml = (id, html) => {
-        const el = document.getElementById(id);
-        if (el) el.innerHTML = html;
-      };
+      // Populate static elements via textContent (XSS-safe)
       const setText = (id, text) => {
         const el = document.getElementById(id);
         if (el) el.textContent = text;
@@ -316,9 +412,9 @@
       setText('hero-dates', event.dates.display);
       setText('hero-times', event.times);
       setText('hero-admission', event.admission);
-      setHtml('about-description', event.description);
-      setHtml('refreshments-text', event.refreshments);
-      setHtml('exhibitor-note', event.exhibitorNote);
+      setText('about-description', event.description);
+      setText('refreshments-text', event.refreshments);
+      setText('exhibitor-note', event.exhibitorNote);
 
       // Venue
       const addrEl = document.getElementById('venue-address');
@@ -334,7 +430,9 @@
       }
 
       const mapsLinkEl = document.getElementById('maps-link');
-      if (mapsLinkEl) mapsLinkEl.href = event.venue.mapsLink;
+      if (mapsLinkEl && event.venue.mapsLink && event.venue.mapsLink.startsWith('https://')) {
+        mapsLinkEl.href = event.venue.mapsLink;
+      }
 
       renderMap(event.venue);
       renderCategories(event.categories);
@@ -354,7 +452,6 @@
       }
 
       // Gallery
-      const gallery = await loadJSON('data/gallery.json');
       renderGallery(gallery.items);
 
       // Post-render
