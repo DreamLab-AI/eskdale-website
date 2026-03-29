@@ -127,6 +127,8 @@ let heroEl = null;
 let animId = null;
 let lastTime = 0;
 let paused = false;
+let cachedW = 0;
+let cachedH = 0;
 
 function resizeCanvas() {
   if (!canvasEl || !heroEl) return;
@@ -136,26 +138,21 @@ function resizeCanvas() {
   canvasEl.height = rect.height * dpr;
   canvasEl.style.width = rect.width + 'px';
   canvasEl.style.height = rect.height + 'px';
-  ctx.scale(dpr, dpr);
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  cachedW = rect.width;
+  cachedH = rect.height;
 }
 
 function tick(timestamp) {
-  if (paused) {
-    animId = requestAnimationFrame(tick);
-    return;
-  }
+  if (paused) return;
 
   const dt = Math.min((timestamp - lastTime) / 1000, 0.05);
   lastTime = timestamp;
 
-  const rect = heroEl.getBoundingClientRect();
-  const w = rect.width;
-  const h = rect.height;
-
-  ctx.clearRect(0, 0, w, h);
+  ctx.clearRect(0, 0, cachedW, cachedH);
 
   for (const p of particles) {
-    p.update(dt, w, h);
+    p.update(dt, cachedW, cachedH);
     p.draw(ctx);
   }
 
@@ -172,11 +169,10 @@ export function init(canvas, hero) {
 
   const isMobile = matchMedia('(max-width: 768px)').matches;
   const count = isMobile ? 15 : 45;
-  const rect = hero.getBoundingClientRect();
 
   particles = [];
   for (let i = 0; i < count; i++) {
-    particles.push(new Brushstroke(rect.width, rect.height));
+    particles.push(new Brushstroke(cachedW, cachedH));
   }
 
   // Stagger initial life so particles don't all appear at once
@@ -184,9 +180,16 @@ export function init(canvas, hero) {
     p.life = (i / count) * p.lifetime;
   });
 
-  // Pause when off-screen
+  // Pause when off-screen — cancel rAF to save CPU/battery
   const observer = new IntersectionObserver(([entry]) => {
+    const wasPaused = paused;
     paused = !entry.isIntersecting;
+    if (paused) {
+      if (animId) { cancelAnimationFrame(animId); animId = null; }
+    } else if (wasPaused) {
+      lastTime = performance.now();
+      animId = requestAnimationFrame(tick);
+    }
   }, { threshold: 0 });
   observer.observe(hero);
 
@@ -201,5 +204,6 @@ export function init(canvas, hero) {
 
 export function destroy() {
   if (animId) cancelAnimationFrame(animId);
+  animId = null;
   particles = [];
 }
