@@ -313,7 +313,6 @@
 
       setText('hero-edition', event.edition);
       setText('hero-title', event.name);
-      setText('hero-tagline', event.tagline);
       setText('hero-dates', event.dates.display);
       setText('hero-times', event.times);
       setText('hero-admission', event.admission);
