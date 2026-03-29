@@ -35,5 +35,19 @@
     "facebook": "https://www.facebook.com/groups/1192543315375338/",
     "twitter": "https://twitter.com/eskdaleart"
   },
-  "exhibitorNote": "Interested in exhibiting? Contact us by email for details."
+  "exhibitorNote": "Interested in exhibiting? Contact us by email for details.",
+  "openGardens": {
+    "title": "Eskdale Open Gardens",
+    "tagline": "In aid of St Bega's C of E Primary School",
+    "date": "Sunday 24th May 2026",
+    "times": "10:30 – 16:30",
+    "admission": {
+      "adults": "£5 per person",
+      "children": "Free for children under 16"
+    },
+    "description": "Explore beautiful private gardens in Eskdale valley on the Sunday of the Art Show weekend. A wonderful opportunity for gardening enthusiasts to discover the hidden gardens of this stunning Lake District valley.",
+    "tickets": "Tickets available from the Eskdale Art Show at St Bega's School, or from High Raise garden",
+    "parking": "Free parking at the school and in the village",
+    "refreshments": "Refreshments available from the Art Show café at St Bega's School"
+  }
 }
