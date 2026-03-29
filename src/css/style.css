@@ -549,6 +549,12 @@ body::before {
   border-radius: var(--radius);
 }
 
+/* --- Open Gardens --- */
+.gardens-intro {
+  max-width: 48rem;
+  color: var(--color-text-secondary);
+}
+
 /* --- Refreshments --- */
 .refreshments-callout {
   text-align: center;

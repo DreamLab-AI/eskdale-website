@@ -341,6 +341,18 @@
       renderContact(event.contact);
       initCountdown(event.dates.start);
 
+      // Open Gardens
+      if (event.openGardens) {
+        const og = event.openGardens;
+        setText('gardens-tagline', og.tagline);
+        setText('gardens-description', og.description);
+        const whenEl = document.getElementById('gardens-when');
+        if (whenEl) whenEl.innerHTML = `${esc(og.date)}<br>${esc(og.times)}`;
+        const admEl = document.getElementById('gardens-admission');
+        if (admEl) admEl.innerHTML = `${esc(og.admission.adults)}<br>${esc(og.admission.children)}`;
+        setText('gardens-tickets', og.tickets);
+      }
+
       // Gallery
       const gallery = await loadJSON('data/gallery.json');
       renderGallery(gallery.items);
