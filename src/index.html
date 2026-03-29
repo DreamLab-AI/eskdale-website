@@ -32,6 +32,7 @@
   <nav class="site-nav" aria-label="Main navigation">
     <a href="#hero">Home</a>
     <a href="#about">About</a>
+    <a href="#posters">Posters</a>
     <a href="#categories">What's On</a>
     <a href="#gallery">Gallery</a>
     <a href="#visit">Visit</a>
@@ -69,8 +70,35 @@
       </div>
     </section>
 
+    <!-- Poster Carousel -->
+    <section class="section section--alt" id="posters">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>This Year's Posters</h2>
+        </div>
+        <div class="carousel reveal" aria-label="Event posters" role="region">
+          <div class="carousel-track" id="carousel-track">
+            <div class="carousel-slide">
+              <img src="assets/images/poster-vintage.webp" alt="Eskdale Art Show poster — vintage painted scene of Eskdale valley with stone bridge" width="800" height="1200" loading="lazy">
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/images/poster-watercolour.webp" alt="Eskdale Art Show poster — watercolour forest design with event details" width="800" height="1131" loading="lazy">
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/images/poster-artists.webp" alt="Eskdale Art Show — calling all artists, invitation to exhibit" width="800" height="1131" loading="lazy">
+            </div>
+          </div>
+          <button class="carousel-btn carousel-btn--prev" aria-label="Previous poster">&#x2039;</button>
+          <button class="carousel-btn carousel-btn--next" aria-label="Next poster">&#x203A;</button>
+          <div class="carousel-dots" id="carousel-dots"></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="wash-divider"></div>
+
     <!-- Categories -->
-    <section class="section section--alt" id="categories">
+    <section class="section" id="categories">
       <div class="container">
         <div class="section-header reveal">
           <h2>What to See</h2>

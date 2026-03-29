@@ -146,6 +146,64 @@
     grid.innerHTML = items.join('');
   }
 
+  // --- Poster Carousel ---
+  function initCarousel() {
+    const track = document.getElementById('carousel-track');
+    const dotsContainer = document.getElementById('carousel-dots');
+    if (!track || !dotsContainer) return;
+
+    const slides = track.querySelectorAll('.carousel-slide');
+    if (slides.length === 0) return;
+
+    const prevBtn = track.parentElement.querySelector('.carousel-btn--prev');
+    const nextBtn = track.parentElement.querySelector('.carousel-btn--next');
+    let current = 0;
+    let autoTimer = null;
+
+    // Build dots
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.classList.add('carousel-dot');
+      if (i === 0) dot.classList.add('active');
+      dot.setAttribute('aria-label', `Show poster ${i + 1}`);
+      dot.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(dot);
+    });
+
+    function goTo(idx) {
+      current = ((idx % slides.length) + slides.length) % slides.length;
+      track.style.transform = `translateX(-${current * 100}%)`;
+      dotsContainer.querySelectorAll('.carousel-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === current);
+      });
+      resetAuto();
+    }
+
+    function resetAuto() {
+      if (autoTimer) clearInterval(autoTimer);
+      autoTimer = setInterval(() => goTo(current + 1), 5000);
+    }
+
+    prevBtn.addEventListener('click', () => goTo(current - 1));
+    nextBtn.addEventListener('click', () => goTo(current + 1));
+
+    // Swipe support
+    let startX = 0;
+    track.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', (e) => {
+      const dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 50) goTo(current + (dx > 0 ? -1 : 1));
+    }, { passive: true });
+
+    // Keyboard
+    track.parentElement.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') goTo(current - 1);
+      if (e.key === 'ArrowRight') goTo(current + 1);
+    });
+
+    resetAuto();
+  }
+
   // --- Scroll Reveal Fallback ---
   function initRevealFallback() {
     if (CSS.supports && CSS.supports('animation-timeline: view()')) return;
@@ -283,6 +341,7 @@
       renderGallery(gallery.items);
 
       // Post-render
+      initCarousel();
       initRevealFallback();
       initBrushstrokes();
 
