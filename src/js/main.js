@@ -328,6 +328,11 @@
       const transportEl = document.getElementById('venue-transport');
       if (transportEl) transportEl.textContent = event.venue.transport;
 
+      const w3wEl = document.getElementById('venue-w3w');
+      if (w3wEl && event.venue.what3words) {
+        w3wEl.innerHTML = `<a href="https://w3w.co/${esc(event.venue.what3words)}" target="_blank" rel="noopener">///${esc(event.venue.what3words)}</a>`;
+      }
+
       const mapsLinkEl = document.getElementById('maps-link');
       if (mapsLinkEl) mapsLinkEl.href = event.venue.mapsLink;
 

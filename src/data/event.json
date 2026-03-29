@@ -14,8 +14,9 @@
     "name": "St Bega's C of E Primary School",
     "address": "Eskdale Green, Holmrook, CA19 1TW, Cumbria",
     "transport": "Near Irton Road Railway Station on the Ravenglass & Eskdale Railway (La'al Ratty)",
-    "mapEmbed": "https://www.openstreetmap.org/export/embed.html?bbox=-3.285,54.393,-3.270,54.400&layer=mapnik&marker=54.3965,-3.2775",
-    "mapsLink": "https://www.openstreetmap.org/?mlat=54.3965&mlon=-3.2775#map=16/54.3965/-3.2775",
+    "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5090.008061641459!2d-3.3293540082619226!3d54.3918297472166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487cca005f1d2261%3A0x3e8dbee084953d1c!2sSt%20Begas%20C%20Of%20E%20Primary%20School!5e1!3m2!1sen!2suk!4v1774814182168!5m2!1sen!2suk",
+    "mapsLink": "https://maps.google.com/?q=St+Begas+C+Of+E+Primary+School,+Eskdale+Green,+CA19+1TW",
+    "what3words": "sprouts.fussy.gravel",
     "coordinates": { "lat": 54.3965, "lng": -3.2775 }
   },
   "categories": [
@@ -30,10 +31,9 @@
   ],
   "refreshments": "Delicious home-made refreshments including cakes, scones, and hot drinks — all in aid of St Bega's School.",
   "contact": {
-    "phone": "019467 23259",
     "email": "eskdaleartshow@st-begas.cumbria.sch.uk",
     "facebook": "https://www.facebook.com/EskdaleArtshow",
     "twitter": "https://twitter.com/eskdaleart"
   },
-  "exhibitorNote": "Interested in exhibiting? Contact us by email or phone for details."
+  "exhibitorNote": "Interested in exhibiting? Contact us by email for details."
 }
