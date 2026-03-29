@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Eskdale Art Show — 31st Annual, May 2026</title>
-  <meta name="description" content="31st Annual Eskdale Art Show. Free admission. Paintings, pottery, jewellery, woodwork, photography and more at St Bega's School, Eskdale Green, Lake District. 23–25 May 2026.">
+  <meta name="description" content="31st Annual Eskdale Art Show & Open Gardens. Free art exhibition plus open gardens tour — paintings, pottery, jewellery, woodwork and more at St Bega's School, Eskdale Green, Lake District. 23–25 May 2026.">
   <meta name="theme-color" content="#F7F5F0">
 
   <!-- Canonical -->
@@ -12,7 +12,7 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="The Eskdale Art Show — 31st Annual">
-  <meta property="og:description" content="Free community art exhibition in the heart of Eskdale valley. Paintings, pottery, jewellery, woodwork and more. 23–25 May 2026.">
+  <meta property="og:description" content="Free community art exhibition plus Eskdale Open Gardens tour in the heart of the Lake District. Paintings, pottery, jewellery, woodwork and more. 23–25 May 2026.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://eskdaleartshow.com/">
   <meta property="og:image" content="https://eskdaleartshow.com/assets/images/og-card.svg">
@@ -30,49 +30,87 @@
 
   <!-- Structured Data: Event -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Event",
-    "name": "The Eskdale Art Show",
-    "description": "31st Annual Eskdale Art Show. Free community art exhibition featuring paintings, photography, pottery, jewellery, woodwork, prints, textiles and handcrafted cards from local and regional artists. Home-made refreshments in aid of St Bega's School. A great day out for all the family in the heart of the Lake District.",
-    "startDate": "2026-05-23T10:00:00",
-    "endDate": "2026-05-25T16:30:00",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-    "isAccessibleForFree": true,
-    "url": "https://eskdaleartshow.com/",
-    "image": "https://eskdaleartshow.com/assets/images/og-card.svg",
-    "location": {
-      "@type": "Place",
-      "name": "St Bega's C of E Primary School",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Eskdale Green",
-        "addressLocality": "Holmrook",
-        "postalCode": "CA19 1TW",
-        "addressRegion": "Cumbria",
-        "addressCountry": "GB"
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "The Eskdale Art Show",
+      "description": "31st Annual Eskdale Art Show. Free community art exhibition featuring paintings, photography, pottery, jewellery, woodwork, prints, textiles and handcrafted cards from local and regional artists. Home-made refreshments in aid of St Bega's School. A great day out for all the family in the heart of the Lake District.",
+      "startDate": "2026-05-23T10:00:00",
+      "endDate": "2026-05-25T16:30:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "isAccessibleForFree": true,
+      "url": "https://eskdaleartshow.com/",
+      "image": "https://eskdaleartshow.com/assets/images/og-card.svg",
+      "location": {
+        "@type": "Place",
+        "name": "St Bega's C of E Primary School",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Eskdale Green",
+          "addressLocality": "Holmrook",
+          "postalCode": "CA19 1TW",
+          "addressRegion": "Cumbria",
+          "addressCountry": "GB"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 54.3965,
+          "longitude": -3.2775
+        }
       },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 54.3965,
-        "longitude": -3.2775
+      "organizer": {
+        "@type": "Organization",
+        "name": "Eskdale Art Show",
+        "email": "eskdaleartshow@st-begas.cumbria.sch.uk",
+        "url": "https://eskdaleartshow.com/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "GBP",
+        "availability": "https://schema.org/InStock",
+        "url": "https://eskdaleartshow.com/"
       }
     },
-    "organizer": {
-      "@type": "Organization",
-      "name": "Eskdale Art Show",
-      "email": "eskdaleartshow@st-begas.cumbria.sch.uk",
-      "url": "https://eskdaleartshow.com/"
-    },
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "GBP",
-      "availability": "https://schema.org/InStock",
-      "url": "https://eskdaleartshow.com/"
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Eskdale Open Gardens",
+      "description": "Explore beautiful private gardens in Eskdale valley on the Sunday of the Art Show weekend. A wonderful opportunity for gardening enthusiasts to discover the hidden gardens of this stunning Lake District valley. Ticket proceeds in aid of St Bega's C of E Primary School.",
+      "startDate": "2026-05-24T10:30:00",
+      "endDate": "2026-05-24T16:30:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "isAccessibleForFree": false,
+      "url": "https://eskdaleartshow.com/#gardens",
+      "location": {
+        "@type": "Place",
+        "name": "Eskdale Green, Cumbria",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Eskdale Green",
+          "addressRegion": "Cumbria",
+          "addressCountry": "GB"
+        }
+      },
+      "organizer": {
+        "@type": "Organization",
+        "name": "Eskdale Art Show",
+        "email": "eskdaleartshow@st-begas.cumbria.sch.uk",
+        "url": "https://eskdaleartshow.com/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "5",
+        "priceCurrency": "GBP",
+        "availability": "https://schema.org/InStock",
+        "url": "https://eskdaleartshow.com/#gardens",
+        "description": "Adults £5; free for children under 16"
+      }
     }
-  }
+  ]
   </script>
 </head>
 <body>
