@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src https://www.openstreetmap.org https://tile.openstreetmap.org https://maps.google.com; base-uri 'self'; form-action 'none';">
   <title>The Eskdale Art Show — 31st Annual, May 2026</title>
   <meta name="description" content="31st Annual Eskdale Art Show & Open Gardens. Free art exhibition plus open gardens tour — paintings, pottery, jewellery, woodwork and more at St Bega's School, Eskdale Green, Lake District. 23–25 May 2026.">
   <meta name="theme-color" content="#F7F5F0">
@@ -15,12 +16,20 @@
   <meta property="og:description" content="Free community art exhibition plus Eskdale Open Gardens tour in the heart of the Lake District. Paintings, pottery, jewellery, woodwork and more. 23–25 May 2026.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://eskdaleartshow.com/">
-  <meta property="og:image" content="https://eskdaleartshow.com/assets/images/og-card.svg">
+  <meta property="og:image" content="https://eskdaleartshow.com/assets/images/poster-vintage.webp">
+  <meta property="og:image:width" content="800">
+  <meta property="og:image:height" content="1200">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Preload critical assets -->
+  <link rel="preload" href="data/event.json" as="fetch" crossorigin>
+  <link rel="preload" href="data/gallery.json" as="fetch" crossorigin>
+  <link rel="preload" href="wasm/pkg/brushstroke_particles_bg.wasm" as="fetch" type="application/wasm" crossorigin>
+  <link rel="dns-prefetch" href="https://www.openstreetmap.org">
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/style.css">
@@ -42,7 +51,7 @@
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "isAccessibleForFree": true,
       "url": "https://eskdaleartshow.com/",
-      "image": "https://eskdaleartshow.com/assets/images/og-card.svg",
+      "image": "https://eskdaleartshow.com/assets/images/poster-vintage.webp",
       "location": {
         "@type": "Place",
         "name": "St Bega's C of E Primary School",
@@ -138,8 +147,8 @@
       <h1 id="hero-title">The Eskdale Art Show</h1>
       <p class="hero-dates" id="hero-dates">Saturday 23rd – Monday 25th May 2026</p>
       <p class="hero-times" id="hero-times">10:00 – 16:30 daily</p>
-      <p class="hero-admission" id="hero-admission">Free Admission & Parking</p>
-      <p class="hero-countdown" id="countdown"></p>
+      <p class="hero-admission" id="hero-admission">Free Admission &amp; Parking</p>
+      <p class="hero-countdown" id="countdown" aria-live="polite" aria-atomic="true"></p>
       <div class="hero-cta-group">
         <a href="#gallery" class="btn btn--primary">View Gallery</a>
         <a href="#visit" class="btn btn--outline">How to Find Us</a>
@@ -219,9 +228,9 @@
     </section>
 
     <!-- Lightbox -->
-    <div class="lightbox" id="lightbox" role="dialog" aria-label="Image viewer">
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" aria-hidden="true">
       <button class="lightbox-close" aria-label="Close">&times;</button>
-      <img src="" alt="">
+      <img src="data:," alt="">
       <p class="lightbox-caption"></p>
     </div>
 
@@ -236,34 +245,34 @@
         </div>
         <div class="info-cards reveal">
           <div class="info-card">
-            <span class="info-card-icon">&#x1F4C5;</span>
+            <span class="info-card-icon" role="img" aria-hidden="true">&#x1F4C5;</span>
             <h3>When</h3>
             <p id="visit-when">Saturday 23rd – Monday 25th May 2026<br>10:00 – 16:30 daily</p>
           </div>
           <div class="info-card">
-            <span class="info-card-icon">&#x1F4CD;</span>
+            <span class="info-card-icon" role="img" aria-hidden="true">&#x1F4CD;</span>
             <h3>Where</h3>
             <p id="visit-where">St Bega's C of E Primary School<br>Eskdale Green, CA19 1TW</p>
           </div>
           <div class="info-card">
-            <span class="info-card-icon">&#x1F3AB;</span>
+            <span class="info-card-icon" role="img" aria-hidden="true">&#x1F3AB;</span>
             <h3>Entry</h3>
             <p>Free admission<br>Free parking on site</p>
           </div>
           <div class="info-card">
-            <span class="info-card-icon">&#x1F682;</span>
+            <span class="info-card-icon" role="img" aria-hidden="true">&#x1F682;</span>
             <h3>By Rail</h3>
             <p>Near Irton Road Station on the Ravenglass &amp; Eskdale Railway</p>
           </div>
         </div>
 
-        <div class="directions-grid" style="margin-top: 2.5rem;">
+        <div class="directions-grid directions-grid--spaced">
           <div class="directions-text reveal">
             <address id="venue-address">
               St Bega's C of E Primary School<br>
               Eskdale Green, Holmrook, CA19 1TW, Cumbria
             </address>
-            <p id="venue-transport">Near Irton Road Railway Station on the Ravenglass & Eskdale Railway (La'al Ratty)</p>
+            <p id="venue-transport">Near Irton Road Railway Station on the Ravenglass &amp; Eskdale Railway (La'al Ratty)</p>
             <p id="venue-w3w"><a href="https://w3w.co/sprouts.fussy.gravel" target="_blank" rel="noopener">///sprouts.fussy.gravel</a></p>
             <a href="https://maps.google.com/?q=St+Begas+C+Of+E+Primary+School,+Eskdale+Green,+CA19+1TW" id="maps-link" class="btn btn--outline" target="_blank" rel="noopener">Open in Maps</a>
           </div>
@@ -272,8 +281,8 @@
                     src=""
                     title="Map showing Eskdale Green location"
                     loading="lazy"
-                    allowfullscreen=""
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    referrerpolicy="no-referrer"
+                    sandbox="allow-scripts allow-same-origin"></iframe>
           </div>
         </div>
       </div>
@@ -285,7 +294,7 @@
     <section class="section" id="refreshments">
       <div class="container">
         <div class="refreshments-callout reveal">
-          <span class="callout-icon">&#x2615;</span>
+          <span class="callout-icon" role="img" aria-hidden="true">&#x2615;</span>
           <h3>Home-Made Refreshments</h3>
           <p id="refreshments-text">Delicious home-made refreshments including cakes, scones, and hot drinks — all in aid of St Bega's School.</p>
         </div>
@@ -306,22 +315,22 @@
         </div>
         <div class="info-cards reveal" style="margin-top: 2rem;">
           <div class="info-card">
-            <span class="info-card-icon">&#x1F4C5;</span>
+            <span class="info-card-icon" role="img" aria-hidden="true">&#x1F4C5;</span>
             <h3>When</h3>
             <p id="gardens-when">Sunday 24th May 2026<br>10:30 – 16:30</p>
           </div>
           <div class="info-card">
-            <span class="info-card-icon">&#x1F33A;</span>
+            <span class="info-card-icon" role="img" aria-hidden="true">&#x1F33A;</span>
             <h3>Admission</h3>
             <p id="gardens-admission">£5 per adult<br>Free for children under 16</p>
           </div>
           <div class="info-card">
-            <span class="info-card-icon">&#x1F39F;</span>
+            <span class="info-card-icon" role="img" aria-hidden="true">&#x1F39F;</span>
             <h3>Tickets</h3>
             <p id="gardens-tickets">Available from the Art Show at St Bega's School, or from High Raise garden</p>
           </div>
           <div class="info-card">
-            <span class="info-card-icon">&#x1F697;</span>
+            <span class="info-card-icon" role="img" aria-hidden="true">&#x1F697;</span>
             <h3>Parking</h3>
             <p>Free parking at the school and in the village</p>
           </div>
@@ -340,13 +349,13 @@
         </div>
         <div class="info-cards reveal">
           <div class="info-card">
-            <span class="info-card-icon">&#x1F4C4;</span>
+            <span class="info-card-icon" role="img" aria-hidden="true">&#x1F4C4;</span>
             <h3>Information Pack</h3>
             <p>Everything you need to know about exhibiting — fees, setup, and what to expect on the day.</p>
             <a href="https://github.com/user-attachments/files/26335008/Eskdale.Art.Show.Application.Information.2026.pdf" class="btn btn--outline" download>Download PDF</a>
           </div>
           <div class="info-card">
-            <span class="info-card-icon">&#x1F4DD;</span>
+            <span class="info-card-icon" role="img" aria-hidden="true">&#x1F4DD;</span>
             <h3>Application Form</h3>
             <p>Complete and return the application pack to secure your place at this year's show.</p>
             <a href="https://github.com/user-attachments/files/26335007/Application.Pack.2026.docx" class="btn btn--outline" download>Download Form</a>
