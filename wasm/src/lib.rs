@@ -52,36 +52,30 @@ struct Brushstroke {
 
 impl Brushstroke {
     fn new_random(rng: &mut Rng, w: f64, h: f64) -> Self {
-        Self {
-            x: rng.range(0.0, w),
-            y: rng.range(0.0, h),
-            vx: rng.range(-12.5, 12.5),
-            vy: rng.range(-12.5, -2.5),
-            rotation: rng.range(0.0, std::f64::consts::TAU),
-            angular_vel: rng.range(-0.075, 0.075),
-            length: rng.range(30.0, 80.0),
-            width: rng.range(8.0, 22.0),
-            max_opacity: rng.range(0.04, 0.16),
-            opacity: 0.0,
-            life: 0.0,
-            lifetime: rng.range(8.0, 18.0),
-            color_idx: (rng.next() as usize) % PALETTE.len(),
-            cv: [
-                rng.range(0.8, 1.2),
-                rng.range(0.8, 1.2),
-                rng.range(0.8, 1.2),
-                rng.range(0.8, 1.2),
-            ],
-        }
+        let mut s = Self {
+            x: 0.0, y: 0.0, vx: 0.0, vy: 0.0,
+            rotation: 0.0, angular_vel: 0.0,
+            length: 0.0, width: 0.0,
+            max_opacity: 0.0, opacity: 0.0,
+            life: 0.0, lifetime: 0.0,
+            color_idx: 0, cv: [0.0; 4],
+        };
+        s.randomize(rng, w, h, true);
+        s
     }
 
-    fn respawn(&mut self, rng: &mut Rng, w: f64, h: f64) {
-        let side = (rng.next() % 4) as u8;
-        match side {
-            0 => { self.x = -50.0; self.y = rng.range(0.0, h); }
-            1 => { self.x = w + 50.0; self.y = rng.range(0.0, h); }
-            2 => { self.x = rng.range(0.0, w); self.y = -50.0; }
-            _ => { self.x = rng.range(0.0, w); self.y = h + 50.0; }
+    fn randomize(&mut self, rng: &mut Rng, w: f64, h: f64, initial: bool) {
+        if initial {
+            self.x = rng.range(0.0, w);
+            self.y = rng.range(0.0, h);
+        } else {
+            let side = (rng.next() % 4) as u8;
+            match side {
+                0 => { self.x = -50.0; self.y = rng.range(0.0, h); }
+                1 => { self.x = w + 50.0; self.y = rng.range(0.0, h); }
+                2 => { self.x = rng.range(0.0, w); self.y = -50.0; }
+                _ => { self.x = rng.range(0.0, w); self.y = h + 50.0; }
+            }
         }
         self.vx = rng.range(-12.5, 12.5);
         self.vy = rng.range(-12.5, -2.5);
@@ -100,6 +94,10 @@ impl Brushstroke {
             rng.range(0.8, 1.2),
             rng.range(0.8, 1.2),
         ];
+    }
+
+    fn respawn(&mut self, rng: &mut Rng, w: f64, h: f64) {
+        self.randomize(rng, w, h, false);
     }
 
     fn update(&mut self, dt: f64, rng: &mut Rng, w: f64, h: f64) {
@@ -122,7 +120,7 @@ impl Brushstroke {
         }
     }
 
-    fn draw(&self, ctx: &CanvasRenderingContext2d) {
+    fn draw(&self, ctx: &CanvasRenderingContext2d, color_str: &str) {
         if self.opacity <= 0.001 {
             return;
         }
@@ -149,10 +147,8 @@ impl Brushstroke {
         let cp4x = self.x - px * self.cv[0] - cos * hl * 0.3 * self.cv[1];
         let cp4y = self.y - py * self.cv[0] - sin * hl * 0.3 * self.cv[1];
 
-        let (r, g, b) = PALETTE[self.color_idx];
-
         ctx.set_global_alpha(self.opacity);
-        ctx.set_fill_style_str(&format!("rgb({},{},{})", r, g, b));
+        ctx.set_fill_style_str(color_str);
         ctx.begin_path();
         ctx.move_to(tx1, ty1);
         let _ = ctx.bezier_curve_to(cp1x, cp1y, cp2x, cp2y, tx2, ty2);
@@ -170,6 +166,7 @@ pub struct ParticleSystem {
     height: f64,
     rng: Rng,
     paused: bool,
+    color_strings: [String; 8],
 }
 
 #[wasm_bindgen]
@@ -196,6 +193,9 @@ impl ParticleSystem {
             particles.push(p);
         }
 
+        // Pre-compute colour strings to avoid per-frame allocations
+        let color_strings = PALETTE.map(|(r, g, b)| format!("rgb({},{},{})", r, g, b));
+
         Ok(ParticleSystem {
             particles,
             ctx,
@@ -203,6 +203,7 @@ impl ParticleSystem {
             height: h,
             rng,
             paused: false,
+            color_strings,
         })
     }
 
@@ -219,7 +220,7 @@ impl ParticleSystem {
 
         for p in &mut self.particles {
             p.update(dt, &mut self.rng, w, h);
-            p.draw(&self.ctx);
+            p.draw(&self.ctx, &self.color_strings[p.color_idx]);
         }
 
         self.ctx.set_global_alpha(1.0);
