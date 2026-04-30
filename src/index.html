@@ -27,7 +27,7 @@
 
   <!-- Preload critical assets -->
   <link rel="preload" href="data/event.json" as="fetch" crossorigin>
-  <link rel="preload" href="data/gallery.json" as="fetch" crossorigin>
+  <link rel="preload" href="data/artists.json" as="fetch" crossorigin>
   <link rel="preload" href="wasm/pkg/brushstroke_particles_bg.wasm" as="fetch" type="application/wasm" crossorigin>
   <link rel="dns-prefetch" href="https://www.openstreetmap.org">
 
@@ -132,10 +132,10 @@
     <a href="#about">About</a>
     <a href="#posters">Posters</a>
     <a href="#categories">What's On</a>
-    <a href="#gallery">Gallery</a>
+    <a href="#artists">Artists</a>
     <a href="#visit">Visit</a>
     <a href="#gardens">Open Gardens</a>
-    <a href="#artists">Exhibiting</a>
+    <a href="#exhibit">Exhibiting</a>
     <a href="#contact">Contact</a>
   </nav>
 
@@ -150,7 +150,7 @@
       <p class="hero-admission" id="hero-admission">Free Admission &amp; Parking</p>
       <p class="hero-countdown" id="countdown" aria-live="polite" aria-atomic="true"></p>
       <div class="hero-cta-group">
-        <a href="#gallery" class="btn btn--primary">View Gallery</a>
+        <a href="#artists" class="btn btn--primary">Meet the Artists</a>
         <a href="#visit" class="btn btn--outline">How to Find Us</a>
       </div>
     </div>
@@ -213,20 +213,30 @@
 
     <div class="wash-divider"></div>
 
-    <!-- Gallery -->
-    <section class="section" id="gallery">
+    <!-- Artists -->
+    <section class="section" id="artists">
       <div class="container">
         <div class="section-header reveal">
-          <h2>Gallery</h2>
-          <p>A preview of works from our talented exhibitors</p>
+          <h2>Meet the Artists</h2>
+          <p>The makers exhibiting at this year's show — tap a card to see their work</p>
         </div>
-        <div class="gallery-grid" id="gallery-grid">
-          <!-- Rendered by JS from gallery.json -->
+        <div class="artists-grid" id="artists-grid">
+          <!-- Rendered by JS from artists.json -->
         </div>
       </div>
     </section>
 
-    <!-- Lightbox -->
+    <!-- Artist Modal -->
+    <div class="artist-modal" id="artist-modal" role="dialog" aria-modal="true" aria-labelledby="artist-modal-name" aria-hidden="true">
+      <div class="artist-modal-inner" role="document">
+        <button class="artist-modal-close" aria-label="Close">&times;</button>
+        <div class="artist-modal-body">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Lightbox (for individual artwork images inside the artist modal) -->
     <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" aria-hidden="true">
       <button class="lightbox-close" aria-label="Close">&times;</button>
       <img src="data:," alt="">
@@ -339,8 +349,8 @@
 
     <div class="wash-divider"></div>
 
-    <!-- Artists -->
-    <section class="section" id="artists">
+    <!-- Exhibit (call for exhibitors) -->
+    <section class="section" id="exhibit">
       <div class="container">
         <div class="section-header reveal">
           <h2>Exhibiting at the Art Show</h2>

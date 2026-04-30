@@ -1,6 +1,6 @@
 /**
  * Eskdale Art Show — Main Script
- * Loads JSON data, renders dynamic content, manages gallery lightbox,
+ * Loads JSON data, renders dynamic content, manages artist modal + lightbox,
  * countdown timer, scroll reveal fallback, and WASM brushstroke init.
  */
 
@@ -71,25 +71,124 @@
     `).join('');
   }
 
-  // --- Render Gallery ---
-  function renderGallery(items) {
-    const grid = document.getElementById('gallery-grid');
+  // --- Render Artists ---
+  function renderArtists(artists) {
+    const grid = document.getElementById('artists-grid');
     if (!grid) return;
 
-    grid.innerHTML = items.map(item => `
-      <figure class="gallery-item reveal" tabindex="0" role="button" data-src="${esc(item.image)}" data-title="${esc(item.title)}" data-artist="${esc(item.artist)}">
-        <img src="${esc(item.image)}" alt="${esc(item.title)} by ${esc(item.artist)}" loading="lazy" width="400" height="300">
-        <figcaption class="gallery-caption">
-          <h4>${esc(item.title)}</h4>
-          <p>${esc(item.artist)} &middot; ${esc(item.medium)}</p>
-        </figcaption>
-      </figure>
-    `).join('');
-
-    initLightbox();
+    grid.innerHTML = artists.map((a, i) => {
+      const featured = a.featured
+        || (a.images && a.images.works && a.images.works[0] && a.images.works[0].src)
+        || null;
+      const icon = CATEGORY_ICONS[a.categoryIcon] || CATEGORY_ICONS.palette;
+      const mediumText = a.category
+        || (Array.isArray(a.medium) ? a.medium.join(', ') : (a.medium || ''));
+      const media = featured
+        ? `<img src="${esc(featured)}" alt="Work by ${esc(a.name)}" loading="lazy">`
+        : `<span class="artist-card-icon" role="img" aria-hidden="true">${icon}</span>`;
+      const mediaClass = featured ? 'artist-card-media' : 'artist-card-media artist-card-media--placeholder';
+      return `
+        <button type="button" class="artist-card reveal" data-artist-index="${i}" aria-label="View details for ${esc(a.name)}">
+          <span class="${mediaClass}">${media}</span>
+          <span class="artist-card-body">
+            <span class="artist-card-name">${esc(a.name)}</span>
+            ${mediumText ? `<span class="artist-card-medium">${esc(mediumText)}</span>` : ''}
+          </span>
+        </button>
+      `;
+    }).join('');
   }
 
-  // --- Lightbox ---
+  // --- Artist Modal ---
+  function initArtistModal(artists) {
+    const modal = document.getElementById('artist-modal');
+    if (!modal) return;
+
+    const body = modal.querySelector('.artist-modal-body');
+    const closeBtn = modal.querySelector('.artist-modal-close');
+    let triggerEl = null;
+
+    function open(index) {
+      const a = artists[index];
+      if (!a) return;
+      triggerEl = document.querySelector(`.artist-card[data-artist-index="${index}"]`);
+      body.innerHTML = renderArtistDetail(a);
+      modal.classList.add('active');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      modal.scrollTop = 0;
+      closeBtn.focus();
+    }
+
+    function close() {
+      modal.classList.remove('active');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (triggerEl) triggerEl.focus();
+    }
+
+    document.querySelectorAll('.artist-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const idx = parseInt(card.dataset.artistIndex, 10);
+        if (!Number.isNaN(idx)) open(idx);
+      });
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal || e.target.classList.contains('artist-modal-close')) close();
+    });
+
+    modal.addEventListener('keydown', (e) => {
+      if (e.key !== 'Escape') return;
+      const lb = document.getElementById('lightbox');
+      if (lb && lb.classList.contains('active')) return; // let lightbox swallow it
+      close();
+    });
+  }
+
+  function renderArtistDetail(a) {
+    const works = (a.images && a.images.works) || [];
+    const worksHTML = works.length ? `
+      <div class="artist-modal-works">
+        ${works.map(w => `
+          <figure class="artist-work" tabindex="0" role="button"
+                  data-src="${esc(w.src)}"
+                  data-title="${esc(w.title || '')}"
+                  data-artist="${esc(a.name)}"
+                  aria-label="Open ${esc(w.title || 'artwork')} by ${esc(a.name)}">
+            <img src="${esc(w.src)}" alt="${esc(w.title || 'Artwork')} by ${esc(a.name)}" loading="lazy">
+            ${w.title ? `<figcaption>${esc(w.title)}</figcaption>` : ''}
+          </figure>
+        `).join('')}
+      </div>
+    ` : '';
+
+    const contact = a.contact || {};
+    const contactItems = [];
+    if (contact.website) {
+      contactItems.push(`<a href="${esc(contact.website)}" target="_blank" rel="noopener">Website</a>`);
+    }
+    if (contact.email) {
+      contactItems.push(`<a href="mailto:${esc(contact.email)}">${esc(contact.email)}</a>`);
+    }
+    if (contact.phone) {
+      contactItems.push(`<a href="tel:${esc(contact.phone.replace(/\s/g, ''))}">${esc(contact.phone)}</a>`);
+    }
+
+    return `
+      <header class="artist-modal-header">
+        <h2 id="artist-modal-name">${esc(a.name)}</h2>
+        ${a.role ? `<p class="artist-modal-role">${esc(a.role)}</p>` : ''}
+        ${a.company ? `<p class="artist-modal-company">${esc(a.company)}</p>` : ''}
+        ${a.category ? `<p class="artist-modal-category">${esc(a.category)}</p>` : ''}
+      </header>
+      ${a.bio ? `<p class="artist-modal-bio">${esc(a.bio)}</p>` : ''}
+      ${worksHTML}
+      ${contactItems.length ? `<div class="artist-modal-contact">${contactItems.join(' &middot; ')}</div>` : ''}
+    `;
+  }
+
+  // --- Lightbox (for artwork images) ---
   function initLightbox() {
     const lightbox = document.getElementById('lightbox');
     if (!lightbox) return;
@@ -98,58 +197,64 @@
     const lbCaption = lightbox.querySelector('.lightbox-caption');
     const closeBtn = lightbox.querySelector('.lightbox-close');
     let triggerEl = null;
-    let galleryItems = [];
+    let items = [];
 
-    function openLightbox(item) {
-      triggerEl = item;
-      galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
-      lbImg.src = item.dataset.src;
-      lbImg.alt = `${item.dataset.title} by ${item.dataset.artist}`;
-      lbCaption.textContent = `${item.dataset.title} — ${item.dataset.artist}`;
+    function setImage(el) {
+      lbImg.src = el.dataset.src;
+      lbImg.alt = el.dataset.title
+        ? `${el.dataset.title} by ${el.dataset.artist}`
+        : `Artwork by ${el.dataset.artist}`;
+      lbCaption.textContent = el.dataset.title
+        ? `${el.dataset.title} — ${el.dataset.artist}`
+        : el.dataset.artist;
+    }
+
+    function open(el) {
+      triggerEl = el;
+      const scope = el.closest('.artist-modal') || document;
+      items = Array.from(scope.querySelectorAll('.artist-work'));
+      setImage(el);
       lightbox.classList.add('active');
       lightbox.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
       closeBtn.focus();
     }
 
-    function closeLightbox() {
+    function close() {
       lightbox.classList.remove('active');
       lightbox.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
       if (triggerEl) triggerEl.focus();
     }
 
-    function showAdjacentImage(direction) {
-      if (!triggerEl || galleryItems.length === 0) return;
-      const currentIndex = galleryItems.indexOf(triggerEl);
-      const nextIndex = (currentIndex + direction + galleryItems.length) % galleryItems.length;
-      const nextItem = galleryItems[nextIndex];
-      triggerEl = nextItem;
-      lbImg.src = nextItem.dataset.src;
-      lbImg.alt = `${nextItem.dataset.title} by ${nextItem.dataset.artist}`;
-      lbCaption.textContent = `${nextItem.dataset.title} — ${nextItem.dataset.artist}`;
+    function adjacent(direction) {
+      if (!items.length) return;
+      const idx = items.indexOf(triggerEl);
+      const next = items[(idx + direction + items.length) % items.length];
+      triggerEl = next;
+      setImage(next);
     }
 
-    document.querySelectorAll('.gallery-item').forEach(item => {
-      item.addEventListener('click', () => openLightbox(item));
-      item.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          openLightbox(item);
-        }
-      });
+    document.addEventListener('click', (e) => {
+      const work = e.target.closest('.artist-work');
+      if (work) open(work);
     });
 
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox || e.target.classList.contains('lightbox-close')) {
-        closeLightbox();
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      const active = document.activeElement;
+      if (active && active.classList.contains('artist-work')) {
+        e.preventDefault();
+        open(active);
       }
     });
 
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox || e.target.classList.contains('lightbox-close')) close();
+    });
+
     lightbox.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') { closeLightbox(); return; }
-      if (e.key === 'ArrowLeft') { showAdjacentImage(-1); return; }
-      if (e.key === 'ArrowRight') { showAdjacentImage(1); return; }
+      if (e.key === 'Escape') { e.stopPropagation(); close(); return; }
+      if (e.key === 'ArrowLeft') { adjacent(-1); return; }
+      if (e.key === 'ArrowRight') { adjacent(1); return; }
       if (e.key === 'Tab') {
         e.preventDefault();
         closeBtn.focus();
@@ -396,9 +501,9 @@
   // --- Boot ---
   async function boot() {
     try {
-      const [event, gallery] = await Promise.all([
+      const [event, artistsData] = await Promise.all([
         loadJSON('data/event.json'),
-        loadJSON('data/gallery.json')
+        loadJSON('data/artists.json')
       ]);
 
       // Populate static elements via textContent (XSS-safe)
@@ -451,8 +556,11 @@
         setText('gardens-tickets', og.tickets);
       }
 
-      // Gallery
-      renderGallery(gallery.items);
+      // Artists
+      const artists = (artistsData && artistsData.artists) || [];
+      renderArtists(artists);
+      initArtistModal(artists);
+      initLightbox();
 
       // Post-render
       initCarousel();

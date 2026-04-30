@@ -11,3 +11,6 @@ Thumbs.db
 *~
 .vscode/
 .idea/
+
+# Private artist submissions — contains BACS details, addresses, phone numbers. Never commit.
+/artists/

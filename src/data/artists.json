@@ -1,0 +1,61 @@
+{
+  "artists": [
+    {
+      "id": "kate-lavender",
+      "name": "Kate Lavender",
+      "role": "Creative Director & Stained Glass Artist",
+      "company": "North Lakes Stained Glass Ltd",
+      "category": "Stained Glass",
+      "categoryIcon": "gem",
+      "featured": "assets/images/artists/kate-lavender/red-roses.jpeg",
+      "medium": ["Stained Glass"],
+      "location": "Keswick",
+      "bio": "Based in Keswick, Kate Lavender established North Lakes Stained Glass in 2021, drawing inspiration from the Lake District's emotive landscapes and nature. With over 30 years of experience in Tiffany foiling and lead light techniques, she creates unique pieces using reclaimed and textured glass. Her work, recently featured on BBC's Make It At Market, includes bespoke commissions, restoration, and creative workshops.",
+      "contact": {
+        "email": "Info@NorthLakesStainedGlass.co.uk",
+        "website": "https://www.NorthLakesStainedGlass.co.uk"
+      },
+      "social": {
+        "instagram": "https://www.instagram.com/north_lakes_stained_glass/",
+        "facebook": "https://www.facebook.com/NorthLakesStainedGlass/"
+      },
+      "images": {
+        "headshot": null,
+        "works": [
+          {
+            "src": "assets/images/artists/kate-lavender/red-roses.jpeg",
+            "title": "Red Roses",
+            "medium": "Stained glass with ceramic vase",
+            "description": "Six stained-glass red roses with green leaves, displayed in a dark green glazed vase."
+          },
+          {
+            "src": "assets/images/artists/kate-lavender/orange-tulips.jpeg",
+            "title": "Orange Tulips",
+            "medium": "Stained glass with ceramic vase",
+            "description": "Six stained-glass orange tulips with green leaves, displayed in a blue ceramic vase."
+          },
+          {
+            "src": "assets/images/artists/kate-lavender/orchid.jpeg",
+            "title": "Orchid",
+            "medium": "Stained glass",
+            "description": "Blush-toned stained-glass orchid stem with deep green leaves."
+          },
+          {
+            "src": "assets/images/artists/kate-lavender/green-mosaic.jpeg",
+            "title": "Green Mosaic Flower",
+            "medium": "Stained glass mosaic",
+            "description": "Layered green stained-glass mosaic flower set on a cork round."
+          },
+          {
+            "src": "assets/images/artists/kate-lavender/exhibition-display.jpeg",
+            "title": "Exhibition Display",
+            "medium": "Photograph",
+            "description": "Exhibition display featuring Kate's tulips and mixed stained-glass stems alongside her artist statement."
+          }
+        ]
+      },
+      "imagesDir": "assets/images/artists/kate-lavender/",
+      "socialSpotlightWeek": null
+    }
+  ]
+}
