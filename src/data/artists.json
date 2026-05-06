@@ -12,7 +12,6 @@
       "location": "Keswick",
       "bio": "Based in Keswick, Kate Lavender established North Lakes Stained Glass in 2021, drawing inspiration from the Lake District's emotive landscapes and nature. With over 30 years of experience in Tiffany foiling and lead light techniques, she creates unique pieces using reclaimed and textured glass. Her work, recently featured on BBC's Make It At Market, includes bespoke commissions, restoration, and creative workshops.",
       "contact": {
-        "email": "Info@NorthLakesStainedGlass.co.uk",
         "website": "https://www.NorthLakesStainedGlass.co.uk"
       },
       "social": {
@@ -68,9 +67,7 @@
       "medium": ["Wood-fired ceramics"],
       "location": "Egremont, Cumbria",
       "bio": "Angela's ceramics are inspired by the natural world and rooted in domestic use. She makes functional ware with a focus on form, surface and quiet daily ritual. Wood firing is one part of that practice, bringing atmosphere, ash and unpredictability that leaves a distinctive mark on each piece.",
-      "contact": {
-        "email": "Angela_strange@hotmail.com"
-      },
+      "contact": {},
       "social": {
         "instagram": null,
         "facebook": "https://www.facebook.com/StrangeCeramics"

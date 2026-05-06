@@ -164,15 +164,16 @@
     ` : '';
 
     const contact = a.contact || {};
+    const social = a.social || {};
     const contactItems = [];
     if (contact.website) {
       contactItems.push(`<a href="${esc(contact.website)}" target="_blank" rel="noopener">Website</a>`);
     }
-    if (contact.email) {
-      contactItems.push(`<a href="mailto:${esc(contact.email)}">${esc(contact.email)}</a>`);
+    if (social.facebook) {
+      contactItems.push(`<a href="${esc(social.facebook)}" target="_blank" rel="noopener">Facebook</a>`);
     }
-    if (contact.phone) {
-      contactItems.push(`<a href="tel:${esc(contact.phone.replace(/\s/g, ''))}">${esc(contact.phone)}</a>`);
+    if (social.instagram) {
+      contactItems.push(`<a href="${esc(social.instagram)}" target="_blank" rel="noopener">Instagram</a>`);
     }
 
     return `
