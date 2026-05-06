@@ -56,6 +56,50 @@
       },
       "imagesDir": "assets/images/artists/kate-lavender/",
       "socialSpotlightWeek": null
+    },
+    {
+      "id": "strange-ceramics",
+      "name": "Angela Strange",
+      "role": "Ceramicist",
+      "company": "Strange Ceramics",
+      "category": "Pottery",
+      "categoryIcon": "pottery",
+      "featured": "assets/images/artists/strange-ceramics/wood-fired-teapot.jpg",
+      "medium": ["Wood-fired ceramics"],
+      "location": "Egremont, Cumbria",
+      "bio": "Angela's ceramics are inspired by the natural world and rooted in domestic use. She makes functional ware with a focus on form, surface and quiet daily ritual. Wood firing is one part of that practice, bringing atmosphere, ash and unpredictability that leaves a distinctive mark on each piece.",
+      "contact": {
+        "email": "Angela_strange@hotmail.com"
+      },
+      "social": {
+        "instagram": null,
+        "facebook": "https://www.facebook.com/StrangeCeramics"
+      },
+      "images": {
+        "headshot": null,
+        "works": [
+          {
+            "src": "assets/images/artists/strange-ceramics/wood-fired-teapot.jpg",
+            "title": "Wood-fired teapot",
+            "medium": "Ceramics",
+            "description": "Wood-fired stoneware teapot with sculpted lid finial and ash-streaked drip glaze."
+          },
+          {
+            "src": "assets/images/artists/strange-ceramics/chawan.jpg",
+            "title": "Chawan tea bowls",
+            "medium": "Ceramics",
+            "description": "Three wood-fired Japanese tea bowls (chawan) — sage celadon, ash-marked stoneware, and deep iron-red."
+          },
+          {
+            "src": "assets/images/artists/strange-ceramics/tea-set.jpg",
+            "title": "Teapot and chawan set",
+            "medium": "Ceramics",
+            "description": "The wood-fired teapot displayed with a set of chawan tea bowls."
+          }
+        ]
+      },
+      "imagesDir": "assets/images/artists/strange-ceramics/",
+      "socialSpotlightWeek": null
     }
   ]
 }

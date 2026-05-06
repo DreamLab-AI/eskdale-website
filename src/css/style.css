@@ -719,6 +719,8 @@ body::before {
 /* --- Open Gardens --- */
 .gardens-intro {
   max-width: 48rem;
+  margin: 0 auto;
+  text-align: center;
   color: var(--color-text-secondary);
 }
 
