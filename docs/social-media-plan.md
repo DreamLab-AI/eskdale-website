@@ -42,8 +42,8 @@ Build-up (twice-weekly artist spotlights):
 | ---- | ----------- | ------- | ---- | ----- | ----- | ------ |
 | Thu 23 Apr 2026 | ~4.5 | FB + X | Save the date — 31st Annual Eskdale Art Show, 23–25 May. Dates, times, free entry & parking. | Hero image / poster | | todo |
 | Thu 30 Apr 2026 | ~3.5 | FB + X | Artist spotlight #1 — North Lakes Stained Glass (Kate Lavender). Returning exhibitor; angle: BBC *Make It At Market* feature, 30 yrs experience, Lakeland-inspired glass | Artist photo + 1 work (extra detail available — see below) | | done |
-| Thu 7 May 2026 | ~2.5 | FB + X | Artist spotlight #2 — Strange Ceramics (Angela Strange). Wood-fired pottery — teapot + Japanese tea bowls (Chawan); angle: ash, atmosphere, daily ritual. *Swapped earlier — images received.* | Photos supplied by artist (3 received) | | drafted, ready |
-| Mon 11 May 2026 | ~2 | FB + X | Artist spotlight #3 — Debra Oldman. New exhibitor; angle: came as a friend's guest in 2024, inspired to submit her own work — Morecambe Bay & Lakeland Fells. **Awaiting images.** | Need photos from artist | | drafted, awaiting images |
+| Thu 7 May 2026 | ~2.5 | FB + X | Artist spotlight #2 — Strange Ceramics (Angela Strange). Wood-fired pottery — teapot + Japanese tea bowls (Chawan); angle: ash, atmosphere, daily ritual. *Swapped earlier — images received.* | Photos supplied by artist (3 received) | | done |
+| Mon 11 May 2026 | ~2 | FB + X | Artist spotlight #3 — Debra Oldman. New exhibitor; angle: came as a friend's guest in 2024, inspired to submit her own work — Morecambe Bay & Lakeland Fells. | *The Gilded Chill* photo received, processed | | drafted, ready |
 | Thu 14 May 2026 | ~1.5 | FB + X | Artist spotlight #4 | Artist photo + 1 work | | todo |
 
 Crescendo (event week):
@@ -221,7 +221,7 @@ Notes:
 - **Catalogue bio:** Since discovering my love of painting, I find it exciting to explore different mediums that enable me to express my appreciation of the ever-changing Morecambe Bay and the breathtaking Lakeland Fells. I'm drawn to the sea and landscapes. I find painting an immersive experience and has led to being part of a wonderful and welcoming artistic community.
 - **Hooks for the post:** "From visitor to exhibitor" — debut at the Eskdale Art Show after watching a friend last year; Morecambe Bay & Lakeland Fells in acrylic, mixed media, pastel and felting.
 - **Bringing (8 items):** The Gilded Chill (£95), The Gilded Summer (£85), New Beginnings (£75), Tranquility (£70), Summer Breeze (£85), Fell Top Summer — pastel (£65), Out Beyond (£65), Shades of Delphiniums — felting/mixed fabric (£45). Range of media is itself a hook.
-- **Asset note:** **Awaiting photos from Debra** — chase ahead of Mon 11 May.
+- **Asset note:** *The Gilded Chill* photo received 12 May, processed to `src/assets/images/artists/debra-oldman/the-gilded-chill.jpg`.
 
 ### Template — future artists
 

@@ -3,8 +3,8 @@
 ## Open
 
 - [ ] Flesh out the social media plan (see `social-media-plan.md`) — schedule + first 3 artist details done; rest of artists, channels, audience, measurement still TBD
-- [ ] Add remaining artists to the website (artists.json) — Debra Oldman next, then the rest
-- [ ] **Chase Debra Oldman for photos** — needed by Mon 11 May for spotlight #3
+- [ ] Add remaining artists to the website (artists.json) — Debra Oldman done, rest TBD
+- [x] **Chase Debra Oldman for photos** — *The Gilded Chill* received 12 May, processed
 - [ ] Chase Kate Lavender for a headshot / portrait shot for the artist modal
 
 ## Done

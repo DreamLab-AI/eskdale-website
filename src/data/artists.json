@@ -97,6 +97,36 @@
       },
       "imagesDir": "assets/images/artists/strange-ceramics/",
       "socialSpotlightWeek": null
+    },
+    {
+      "id": "debra-oldman",
+      "name": "Debra Oldman",
+      "role": "Artist",
+      "company": null,
+      "category": "Mixed Media",
+      "categoryIcon": "palette",
+      "featured": "assets/images/artists/debra-oldman/the-gilded-chill.jpg",
+      "medium": ["Acrylic", "Mixed Media", "Pastel", "Felting"],
+      "location": "Lancaster",
+      "bio": "Lancaster-based, Debra works across acrylic, mixed media, pastel and felting, capturing the ever-changing Morecambe Bay and the breathtaking Lakeland Fells. A first-time exhibitor this year — she came along as a friend's guest in 2024, was inspired by what she saw, and decided to submit her own work for 2026.",
+      "contact": {},
+      "social": {
+        "instagram": null,
+        "facebook": null
+      },
+      "images": {
+        "headshot": null,
+        "works": [
+          {
+            "src": "assets/images/artists/debra-oldman/the-gilded-chill.jpg",
+            "title": "The Gilded Chill",
+            "medium": "Acrylic",
+            "description": "Framed acrylic painting of Wastwater screes — richly textured fells in warm golds, reds and purples reflected across the lake."
+          }
+        ]
+      },
+      "imagesDir": "assets/images/artists/debra-oldman/",
+      "socialSpotlightWeek": null
     }
   ]
 }
