@@ -217,6 +217,96 @@
       },
       "imagesDir": "assets/images/artists/gertrude-hope/",
       "socialSpotlightWeek": null
+    },
+    {
+      "id": "bill-walker",
+      "name": "Bill Walker",
+      "role": "Coloured Pencil Artist",
+      "company": null,
+      "category": "Coloured Pencil",
+      "categoryIcon": "palette",
+      "featured": "assets/images/artists/bill-walker/the-fox.jpg",
+      "medium": ["Coloured Pencil"],
+      "location": "Thornton Cleveleys",
+      "bio": "Bill works in coloured pencil, bringing British wildlife to life with extraordinary detail and warmth. A returning exhibitor, he's bringing five framed originals to Eskdale this year — foxes, hares, swans and a red squirrel, each one painstakingly rendered on toned paper.",
+      "contact": {},
+      "social": {
+        "instagram": "https://www.instagram.com/bill.walker.artist/",
+        "facebook": null
+      },
+      "images": {
+        "headshot": null,
+        "works": [
+          {
+            "src": "assets/images/artists/bill-walker/the-fox.jpg",
+            "title": "The Fox",
+            "medium": "Coloured pencil",
+            "description": "A fox portrait in coloured pencil on toned paper — warm russet fur, bright amber eyes and a thick ruff of white and grey."
+          },
+          {
+            "src": "assets/images/artists/bill-walker/gazing.jpg",
+            "title": "Gazing",
+            "medium": "Coloured pencil",
+            "description": "A tabby cat looking upward in coloured pencil on toned paper — green eyes, fine whiskers and beautifully rendered fur."
+          },
+          {
+            "src": "assets/images/artists/bill-walker/the-hare.jpg",
+            "title": "The Hare",
+            "medium": "Coloured pencil",
+            "description": "A hare portrait in coloured pencil — alert ears, soft brown fur and a calm, watchful expression."
+          }
+        ]
+      },
+      "imagesDir": "assets/images/artists/bill-walker/",
+      "socialSpotlightWeek": null
+    },
+    {
+      "id": "shane-stanbridge",
+      "name": "Shane Stanbridge",
+      "role": "Wildlife Photographer",
+      "company": null,
+      "category": "Photography",
+      "categoryIcon": "camera",
+      "featured": "assets/images/artists/shane-stanbridge/red-stag.jpg",
+      "medium": ["Photography"],
+      "location": "Seascale, Cumbria",
+      "bio": "Shane is a wildlife photographer originally from Hastings, East Sussex, now living in Seascale. He travels to as many different countries as possible to see and photograph as many different species as he can — so far Iceland, Norway, Finland, Bulgaria, Hungary, Sweden and Poland. He won the BBC Countryfile Judge's Favourite 2020 competition.",
+      "contact": {},
+      "social": {
+        "instagram": null,
+        "facebook": null
+      },
+      "images": {
+        "headshot": null,
+        "works": [
+          {
+            "src": "assets/images/artists/shane-stanbridge/red-stag.jpg",
+            "title": "Red Stag",
+            "medium": "Photography",
+            "description": "A red stag standing alert on open moorland, autumn grasses and misty fells behind."
+          },
+          {
+            "src": "assets/images/artists/shane-stanbridge/hare-in-wild-meadowfield.jpg",
+            "title": "Hare in Wild Meadowfield",
+            "medium": "Photography",
+            "description": "A brown hare half-hidden in a meadow of crimson clover, ears up, eye bright."
+          },
+          {
+            "src": "assets/images/artists/shane-stanbridge/hedgehog-in-autumn-leaves.jpg",
+            "title": "Hedgehog in Pot in Autumn Leaves",
+            "medium": "Photography",
+            "description": "A hedgehog peering out of a terracotta pot surrounded by fallen autumn leaves."
+          },
+          {
+            "src": "assets/images/artists/shane-stanbridge/highland-cow.jpg",
+            "title": "Highland Cow",
+            "medium": "Photography",
+            "description": "A Highland cow standing on a grassy shore with a Scottish loch and mountains beyond."
+          }
+        ]
+      },
+      "imagesDir": "assets/images/artists/shane-stanbridge/",
+      "socialSpotlightWeek": null
     }
   ]
 }

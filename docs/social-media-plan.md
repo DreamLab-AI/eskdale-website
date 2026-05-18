@@ -50,11 +50,11 @@ Crescendo (event week):
 
 | Date | Channel | Post | Asset | Owner | Status |
 | ---- | ------- | ---- | ----- | ----- | ------ |
-| Mon 18 May 2026 | FB + X | Artist spotlight #5 + "one week to go!" | Artist photo + 1 work | | todo |
+| Mon 19 May 2026 | FB + X | Artist spotlight #5 — Bill Walker. Returning exhibitor; coloured pencil wildlife — foxes, hares, swans, red squirrel. Angle: extraordinary detail on toned paper, British wildlife. | bill-walker/the-fox.jpg | | drafted, ready |
+| Wed 21 May 2026 | FB + X | Artist spotlight #6 — Shane Stanbridge. Wildlife photographer, Seascale local; angle: BBC Countryfile Judge's Favourite 2020, travels worldwide. | shane-stanbridge/red-stag.jpg | | drafted, ready |
 
-| Tue 19 May 2026 | FB + X | Eskdale Open Gardens preview — Sunday 24th, £5 adults, under-16s free | Garden photo(s) | | todo |
-| Wed 20 May 2026 | FB + X | The Artshow Café — home-made cakes, scones, all in aid of St Bega's | Bake / café photo | | todo |
-| Thu 21 May 2026 | FB + X | Getting here — parking, La'al Ratty (Irton Road station), what3words | Map / station photo | | todo |
+| Tue 20 May 2026 | FB + X | Eskdale Open Gardens preview — Sunday 24th, £5 adults, under-16s free | Garden photo(s) | | todo |
+| Thu 22 May 2026 | FB + X | Re-share poster across all social groups — final push | Poster | | todo |
 | Fri 22 May 2026 | FB + X | "Opens tomorrow!" — full line-up recap, categories, times | Poster / collage | | todo |
 | Sat 23 May 2026 | FB + X | Live: Day 1 open — we're open until 16:30! | Setup / opening photo | | todo |
 | Sun 24 May 2026 | FB + X | Live: Open Gardens day — tickets at the school, café open | Garden + café photo | | todo |
@@ -277,6 +277,87 @@ Notes:
 - **Bringing (Section A — 8 framed watercolours):** Knaresborough (£20), Waterside (£45), Bakewell Bridge (£45), Three Trees (£35), Fishing Boats (£35), Harvest Time (£40), Convolvulus (£25), Daffodils (£30). Plus raffle piece (Eaves Wood).
 - **Bringing (Section B):** Unframed originals (shared browsers with Ann).
 - **Asset note:** 3 photos from `grandmother.zip` — fishing boats coastal scene, Bakewell Bridge (framed), watermill. Bakewell Bridge is the strongest standalone.
+
+### Artist spotlight #5 — Bill Walker (Mon 19 May 2026)
+
+**Facebook**
+
+> Artist spotlight #5 — Bill Walker.
+>
+> If you like your wildlife up close and personal, you're going to love Bill's work. A returning exhibitor from Thornton Cleveleys, Bill draws in coloured pencil on toned paper — and the detail is something else. Every whisker, every feather, every strand of fur.
+>
+> He's bringing five framed originals to Eskdale this year: *The Fox*, *The Hare*, *Gazing* (a tabby cat that'll stop you in your tracks), *The Swans* and *Red Squirrel*. All coloured pencil, all that same extraordinary level of detail.
+>
+> Four days to go — see it all from Saturday.
+>
+> Eskdale Art Show, Sat 23 – Mon 25 May, 10:00–16:30, St Bega's School, Eskdale Green. Free entry, free parking.
+>
+> eskdaleartshow.com
+
+**X / Twitter**
+
+> Artist spotlight #5: Bill Walker.
+>
+> Coloured pencil wildlife — foxes, hares, swans and a red squirrel, every whisker rendered on toned paper. Returning to Eskdale with five framed originals.
+>
+> Opens Saturday. Four days to go.
+
+*Assets:* bill-walker/the-fox.jpg (strongest lead — the detail in the fur is striking), bill-walker/gazing.jpg, bill-walker/the-hare.jpg. Tag @bill.walker.artist on Instagram.
+
+---
+
+### Artist spotlight #6 — Shane Stanbridge (Wed 21 May 2026)
+
+**Facebook**
+
+> Artist spotlight #6 — Shane Stanbridge.
+>
+> Our first photographer in the spotlight — and a local one at that. Shane lives in Seascale and travels the world to photograph wildlife, from the Cumbrian fells to the forests of Finland, Iceland, Norway, Bulgaria, Hungary, Sweden and Poland. He won the BBC Countryfile Judge's Favourite competition in 2020.
+>
+> He's bringing eight framed prints to Eskdale: a white-tailed eagle, a hare in a wild meadow, a local red squirrel, a hedgehog tucked into a pot of autumn leaves, bears fighting in Finland, a wild wolf, a roe deer in the snow and a badger smelling daffodils. All at £40 each.
+>
+> Two days to go — see it all from Saturday.
+>
+> Eskdale Art Show, Sat 23 – Mon 25 May, 10:00–16:30, St Bega's School, Eskdale Green. Free entry, free parking.
+>
+> eskdaleartshow.com
+
+**X / Twitter**
+
+> Artist spotlight #6: Shane Stanbridge.
+>
+> Seascale-based wildlife photographer. White-tailed eagles, hares, wolves, bears — from Cumbria to Finland and beyond. BBC Countryfile Judge's Favourite 2020. Eight framed prints, all £40.
+>
+> Eskdale Art Show, opens Saturday.
+
+*Assets:* shane-stanbridge/red-stag.jpg or hare-in-wild-meadowfield.jpg as lead. No socials supplied.
+
+---
+
+#### Shane Stanbridge
+
+- **Artist:** Shane Stanbridge
+- **Based:** Seascale, Cumbria (CA20) — local!
+- **Socials:** none provided
+- **Catalogue bio:** I am a wildlife photographer originally from Hastings, East Sussex now living in Seascale. I like to travel to as many different countries to see and photograph as many different species as possible. So far, I have travelled to Iceland, Norway, Finland, Bulgaria, Hungary, Sweden and Poland. I won the BBC Countryfile Judge's Favourite 2020 Competition.
+- **Hooks for the post:** Local photographer (Seascale); BBC Countryfile Judge's Favourite 2020; worldwide travel for wildlife; first photographer spotlighted; all prints £40.
+- **Bringing (Section A — 8 framed photographs, all £40, all 23×19"):** White-tailed Eagle, Hare in Wild Meadowfield, Local Wild Red Squirrel, Hedgehog in Pot in Autumn Leaves, Bears Fighting in Finland, Wild Wolf in Finland, Roe Deer in the Snow, Badger Smelling Daffodils.
+- **Asset note:** 4 photos — Red Stag (strong lead, though not one of the 8 listed), Hare in Wild Meadowfield (matches #2), Hedgehog in Pot in Autumn Leaves (matches #4), Highland Cow (portfolio piece). The hare or red stag make the strongest leads.
+
+---
+
+#### Bill Walker
+
+- **Artist:** William (Bill) Walker
+- **Based:** Thornton Cleveleys (FY5 4HA)
+- **Returning exhibitor**
+- **Socials:** [Instagram](https://www.instagram.com/bill.walker.artist/)
+- **Catalogue bio:** No Change (from previous year)
+- **Hooks for the post:** Coloured pencil on toned paper; extraordinary detail in wildlife portraiture; returning exhibitor; British wildlife subjects.
+- **Bringing (Section A — 5 framed originals):** The Fox (£65), The Hare (£65), Gazing (£75), The Swans (£90), Red Squirrel (£65).
+- **Asset note:** 3 photos received — the-fox.jpg, gazing.jpg (tabby cat), the-hare.jpg. The Fox is the strongest lead image. All signed "BW" with a paw print.
+
+---
 
 ### Template — future artists
 
