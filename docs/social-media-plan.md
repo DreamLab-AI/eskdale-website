@@ -288,7 +288,7 @@ Notes:
 >
 > He's bringing five framed originals to Eskdale this year: *The Fox*, *The Hare*, *Gazing* (a tabby cat that'll stop you in your tracks), *The Swans* and *Red Squirrel*. All coloured pencil, all that same extraordinary level of detail.
 >
-> Four days to go — see it all from Saturday.
+> Bill is just one of many artists exhibiting this year — painting, ceramics, stained glass, photography and more. Four days to go.
 >
 > Eskdale Art Show, Sat 23 – Mon 25 May, 10:00–16:30, St Bega's School, Eskdale Green. Free entry, free parking.
 >
@@ -298,7 +298,7 @@ Notes:
 
 > Artist spotlight #5: Bill Walker.
 >
-> Coloured pencil wildlife — foxes, hares, swans and a red squirrel, every whisker rendered on toned paper. Returning to Eskdale with five framed originals.
+> Coloured pencil wildlife — foxes, hares, swans and a red squirrel, every whisker rendered on toned paper. Returning to Eskdale with five framed originals. One of many artists exhibiting this year.
 >
 > Opens Saturday. Four days to go.
 
@@ -316,7 +316,7 @@ Notes:
 >
 > He's bringing eight framed prints to Eskdale: a white-tailed eagle, a hare in a wild meadow, a local red squirrel, a hedgehog tucked into a pot of autumn leaves, bears fighting in Finland, a wild wolf, a roe deer in the snow and a badger smelling daffodils. All at £40 each.
 >
-> Two days to go — see it all from Saturday.
+> Shane is one of many artists you'll find at this year's show — painting, ceramics, stained glass, printmaking and more. Two days to go.
 >
 > Eskdale Art Show, Sat 23 – Mon 25 May, 10:00–16:30, St Bega's School, Eskdale Green. Free entry, free parking.
 >
@@ -326,9 +326,9 @@ Notes:
 
 > Artist spotlight #6: Shane Stanbridge.
 >
-> Seascale-based wildlife photographer. White-tailed eagles, hares, wolves, bears — from Cumbria to Finland and beyond. BBC Countryfile Judge's Favourite 2020. Eight framed prints, all £40.
+> Seascale-based wildlife photographer. White-tailed eagles, hares, wolves, bears — from Cumbria to Finland and beyond. BBC Countryfile Judge's Favourite 2020. Eight framed prints, all £40. One of many artists at this year's show.
 >
-> Eskdale Art Show, opens Saturday.
+> Opens Saturday.
 
 *Assets:* shane-stanbridge/red-stag.jpg or hare-in-wild-meadowfield.jpg as lead. No socials supplied.
 
