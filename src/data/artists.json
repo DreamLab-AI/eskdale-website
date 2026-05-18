@@ -127,6 +127,96 @@
       },
       "imagesDir": "assets/images/artists/debra-oldman/",
       "socialSpotlightWeek": null
+    },
+    {
+      "id": "ann-kretzschmar",
+      "name": "Ann Kretzschmar",
+      "role": "Soft Pastel Artist",
+      "company": "Ann Painted Art",
+      "category": "Soft Pastel",
+      "categoryIcon": "palette",
+      "featured": "assets/images/artists/ann-kretzschmar/mountain-foxgloves.jpg",
+      "medium": ["Soft Pastel"],
+      "location": "Galgate, Lancaster",
+      "bio": "Ann works in soft pastel, capturing the Lakeland fells, wildflower meadows and the Eskdale valley in rich, vivid colour. A returning exhibitor, she brings framed originals alongside greetings cards, coasters, keyrings and unframed prints.",
+      "contact": {},
+      "social": {
+        "instagram": null,
+        "facebook": null
+      },
+      "images": {
+        "headshot": null,
+        "works": [
+          {
+            "src": "assets/images/artists/ann-kretzschmar/mountain-foxgloves.jpg",
+            "title": "Mountain Foxgloves",
+            "medium": "Soft pastel",
+            "description": "Foxgloves in the foreground with a fell rising beyond a lake — vivid pinks, greens and a purple-shadowed summit."
+          },
+          {
+            "src": "assets/images/artists/ann-kretzschmar/sunflower-meadow.jpg",
+            "title": "Sunflower Meadow",
+            "medium": "Soft pastel",
+            "description": "A sea of sunflowers stretching to dark fells under a blue sky."
+          },
+          {
+            "src": "assets/images/artists/ann-kretzschmar/summer-in-wasdale.jpg",
+            "title": "Summer in Wasdale",
+            "medium": "Soft pastel",
+            "description": "A fell path winding through dry-stone walls toward a sunlit Lakeland summit."
+          },
+          {
+            "src": "assets/images/artists/ann-kretzschmar/misty-morning.jpg",
+            "title": "Misty Morning",
+            "medium": "Soft pastel",
+            "description": "A misty lane with bare trees and grazing cattle, lit by a low golden sun breaking through the haze."
+          }
+        ]
+      },
+      "imagesDir": "assets/images/artists/ann-kretzschmar/",
+      "socialSpotlightWeek": null
+    },
+    {
+      "id": "gertrude-hope",
+      "name": "Gertrude Hope",
+      "role": "Watercolour Artist",
+      "company": null,
+      "category": "Watercolour",
+      "categoryIcon": "palette",
+      "featured": "assets/images/artists/gertrude-hope/bakewell-bridge.jpg",
+      "medium": ["Watercolour"],
+      "location": "Galgate, Lancaster",
+      "bio": "Gertrude's watercolours are shown in her memory, displayed by her granddaughter Ann Kretzschmar. A returning exhibitor, her work captures bridges, boats, flowers and countryside scenes in the classic English watercolour tradition.",
+      "contact": {},
+      "social": {
+        "instagram": null,
+        "facebook": null
+      },
+      "images": {
+        "headshot": null,
+        "works": [
+          {
+            "src": "assets/images/artists/gertrude-hope/bakewell-bridge.jpg",
+            "title": "Bakewell Bridge",
+            "medium": "Watercolour",
+            "description": "A stone arch bridge over calm water, framed by summer trees — delicate washes of green and warm sandstone."
+          },
+          {
+            "src": "assets/images/artists/gertrude-hope/fishing-boats.jpg",
+            "title": "Fishing Boats",
+            "medium": "Watercolour",
+            "description": "A coastal scene with a beached boat, drying nets and a boathouse, hills receding into soft haze beyond the water."
+          },
+          {
+            "src": "assets/images/artists/gertrude-hope/watermill.jpg",
+            "title": "Watermill",
+            "medium": "Watercolour",
+            "description": "A stone watermill with its wheel visible, set beside a rocky stream with gentle hills behind."
+          }
+        ]
+      },
+      "imagesDir": "assets/images/artists/gertrude-hope/",
+      "socialSpotlightWeek": null
     }
   ]
 }

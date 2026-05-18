@@ -44,13 +44,14 @@ Build-up (twice-weekly artist spotlights):
 | Thu 30 Apr 2026 | ~3.5 | FB + X | Artist spotlight #1 — North Lakes Stained Glass (Kate Lavender). Returning exhibitor; angle: BBC *Make It At Market* feature, 30 yrs experience, Lakeland-inspired glass | Artist photo + 1 work (extra detail available — see below) | | done |
 | Thu 7 May 2026 | ~2.5 | FB + X | Artist spotlight #2 — Strange Ceramics (Angela Strange). Wood-fired pottery — teapot + Japanese tea bowls (Chawan); angle: ash, atmosphere, daily ritual. *Swapped earlier — images received.* | Photos supplied by artist (3 received) | | done |
 | Mon 11 May 2026 | ~2 | FB + X | Artist spotlight #3 — Debra Oldman. New exhibitor; angle: came as a friend's guest in 2024, inspired to submit her own work — Morecambe Bay & Lakeland Fells. | *The Gilded Chill* photo received, processed | | drafted, ready |
-| Thu 14 May 2026 | ~1.5 | FB + X | Artist spotlight #4 | Artist photo + 1 work | | todo |
+| Thu 14 May 2026 | ~1.5 | FB + X | Artist spotlight #4 — Ann Kretzschmar & Gertrude Hope. Granddaughter + grandmother; Ann's vivid soft pastels alongside Gertrude's watercolours displayed posthumously. Angle: two generations, two media, shared stand. | Ann: Mountain Foxgloves (AK66). Gertrude: Bakewell Bridge (1000016916). | | drafted, ready |
 
 Crescendo (event week):
 
 | Date | Channel | Post | Asset | Owner | Status |
 | ---- | ------- | ---- | ----- | ----- | ------ |
 | Mon 18 May 2026 | FB + X | Artist spotlight #5 + "one week to go!" | Artist photo + 1 work | | todo |
+
 | Tue 19 May 2026 | FB + X | Eskdale Open Gardens preview — Sunday 24th, £5 adults, under-16s free | Garden photo(s) | | todo |
 | Wed 20 May 2026 | FB + X | The Artshow Café — home-made cakes, scones, all in aid of St Bega's | Bake / café photo | | todo |
 | Thu 21 May 2026 | FB + X | Getting here — parking, La'al Ratty (Irton Road station), what3words | Map / station photo | | todo |
@@ -222,6 +223,60 @@ Notes:
 - **Hooks for the post:** "From visitor to exhibitor" — debut at the Eskdale Art Show after watching a friend last year; Morecambe Bay & Lakeland Fells in acrylic, mixed media, pastel and felting.
 - **Bringing (8 items):** The Gilded Chill (£95), The Gilded Summer (£85), New Beginnings (£75), Tranquility (£70), Summer Breeze (£85), Fell Top Summer — pastel (£65), Out Beyond (£65), Shades of Delphiniums — felting/mixed fabric (£45). Range of media is itself a hook.
 - **Asset note:** *The Gilded Chill* photo received 12 May, processed to `src/assets/images/artists/debra-oldman/the-gilded-chill.jpg`.
+
+### #4 — Ann Kretzschmar & Gertrude Hope (Thu 14 May 2026)
+
+**Facebook**
+
+> Artist spotlight — Ann Kretzschmar & Gertrude Hope.
+>
+> This one's a bit special. Ann Kretzschmar returns to Eskdale this year with her soft pastels — and alongside them, she's bringing the watercolours of her grandmother, Gertrude Hope, displayed in her memory.
+>
+> Both painters loved the same things: landscape, light, the way a place can hold a feeling. Ann captures it in rich soft pastel — vivid Lakeland fells, wildflower meadows and the Eskdale valley under the name Ann Painted Art. Gertrude worked in watercolour — quieter, lighter, beautifully detailed scenes of bridges, boats and flowers in that classic English tradition.
+>
+> Ann's bringing eight framed pastels including *Mountain Foxgloves*, *Sunflower Meadow* and *Eskdale Blues*, plus greetings cards, coasters and unframed prints. Gertrude's eight watercolours include *Bakewell Bridge*, *Fishing Boats* and *Daffodils* — all sharing the same stand, side by side, just as they would have wanted.
+>
+> Two generations, two media, one shared love of landscape. See it all this Saturday — we open in five days.
+>
+> Eskdale Art Show, Sat 23 – Mon 25 May, 10:00–16:30, St Bega's School, Eskdale Green. Free entry, free parking.
+>
+> eskdaleartshow.com
+
+**X / Twitter**
+
+> Artist spotlight: Ann Kretzschmar & Gertrude Hope — granddaughter and grandmother, sharing a stand at Eskdale.
+>
+> Ann's vivid soft pastels alongside Gertrude's delicate watercolours, displayed in her memory. Two generations, two media, one love of landscape.
+>
+> Opens Saturday. Five days to go.
+
+*Assets:* Ann — Mountain Foxgloves (`AK66-MountainFoxgloves.jpeg`), Sunflower Meadow (`AK77-SunflowerMeadow.jpeg`), Summer in Wasdale (`AK56-SummerInWasdale.jpeg`), Misty Morning (`AK54-MistyMorning.jpeg`). Gertrude — Fishing Boats (`grandmother_temp/1000016905.jpg`), Bakewell Bridge (`grandmother_temp/1000016916.jpg`), Watermill (`grandmother_temp/1000016911.jpg`). Lead with Ann's Mountain Foxgloves + Gertrude's Bakewell Bridge for contrast. No socials for either artist.
+
+---
+
+#### Ann Kretzschmar
+
+- **Artist:** Ann Kretzschmar, trading as Ann Painted Art
+- **Based:** Galgate, Lancaster (LA2 0JY)
+- **Returning exhibitor**
+- **Socials:** none provided
+- **Catalogue bio:** No change (from previous year)
+- **Hooks for the post:** Granddaughter-and-grandmother duo; Gertrude's work shown posthumously; two media side by side on a shared stand; vivid Lakeland landscapes in soft pastel.
+- **Bringing (Section A — 8 framed pastels):** Late Summer Meadow TBC (£60), Along the Shore — Drigg (£60), Gable 3 (£45), Sweep's Brush Tree TBC (£35), Sunflower Meadow (£25), Mountain Foxgloves TBC (£60), Golden Morning TBC (£45), Eskdale Blues (£40). Plus raffle piece. NB: items marked TBC may change — some were in a Storeys Lancaster exhibition 9–16 May.
+- **Bringing (Section B):** Greetings cards, coasters, keyrings, fridge magnets (card display unit / basket), unframed originals and prints (free-standing + table-top browsers, shared with Gertrude).
+- **Asset note:** 4 photos received — AK54 Misty Morning, AK56 Summer in Wasdale, AK66 Mountain Foxgloves, AK77 Sunflower Meadow. Mountain Foxgloves is the strongest lead.
+
+#### Gertrude Hope
+
+- **Artist:** Gertrude Hope (exhibited posthumously, displayed by granddaughter Ann Kretzschmar)
+- **Based:** Galgate, Lancaster (c/o Ann)
+- **Returning exhibitor** (posthumous)
+- **Socials:** none
+- **Catalogue bio:** No change (from previous year)
+- **Hooks for the post:** Grandmother's watercolours shown in her memory; classic English watercolour tradition; shared stand with granddaughter.
+- **Bringing (Section A — 8 framed watercolours):** Knaresborough (£20), Waterside (£45), Bakewell Bridge (£45), Three Trees (£35), Fishing Boats (£35), Harvest Time (£40), Convolvulus (£25), Daffodils (£30). Plus raffle piece (Eaves Wood).
+- **Bringing (Section B):** Unframed originals (shared browsers with Ann).
+- **Asset note:** 3 photos from `grandmother.zip` — fishing boats coastal scene, Bakewell Bridge (framed), watermill. Bakewell Bridge is the strongest standalone.
 
 ### Template — future artists
 
